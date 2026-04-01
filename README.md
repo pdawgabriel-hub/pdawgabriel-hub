@@ -32,12 +32,6 @@ Desarrollador en Formación (DAW) | Técnico en Sistemas (SMR)
 
 ---
 
-### 📊 Estadísticas de GitHub
-![Estadísticas de Gabriel](https://github-readme-stats.vercel.app/api?username=pdawgabriel-hub&show_icons=true&theme=radical&hide_border=true)
-![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=pdawgabriel-hub&layout=compact&theme=radical&hide_border=true)
-
----
-
 ### Contacto
 - **Email:** [pdawgabriel@gmail.com](mailto:pdawgabriel@gmail.com)
 - 📍 Murcia, España.

@@ -26,7 +26,7 @@ Desarrollador en Formación (DAW) | Técnico en Sistemas (SMR)
 
 ---
 
-### 🏗️ En qué estoy trabajando ahora
+### En qué estoy trabajando ahora
 - Finalizando el Grado Superior de **Desarrollo de Aplicaciones Web (DAW)**.
 - Desarrollando un **Sistema Integral de Gestión de Obras** sobre el framework **Odoo 18**, aplicando despliegues profesionales con Docker y Nginx.
 

@@ -1,10 +1,10 @@
 # Soy Gabriel Iborra
 
-Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistemas en el IES Dos Mares(SMR)
+Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistemas en el IES Dos Mares (SMR)
 
 ---
 
-### Tecnologias utilizadas
+### Conocimiento en Tecnologías como ...
 
 **Backend & Lógica**
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)

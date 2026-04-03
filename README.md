@@ -1,6 +1,6 @@
 # Soy Gabriel Iborra
 
-Desarrollador en Formación (DAW) | Técnico en Sistemas (SMR)
+Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistemas en el IES Dos Mares(SMR)
 
 ---
 

@@ -34,4 +34,3 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 
 ### Contacto
 - **Email:** [pdawgabriel@gmail.com](mailto:pdawgabriel@gmail.com)
-- 📍 Murcia, España.

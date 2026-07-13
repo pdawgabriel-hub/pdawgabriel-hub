@@ -20,7 +20,7 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
     Ecosistema frontend modular e inteligente para el análisis contable y control presupuestario de obras en tiempo real.
     *   **Características:** Arquitectura basada en componentes atómicos, filtrado predictivo relacional optimizado con `useMemo` (inmune a discrepancias de texto), y automatización interactiva de importes netos/IVA mediante React Hook Form y Zod.
     *   **Visualización:** Gráficos de balance e históricos con Recharts y sistema global de notificaciones reactivas a través de un contexto personalizado manejado por el hook `useToast`.
-    *   **Despliegue Activo:** Ver despliegue [despliegue en Vercel](https://dashboard-financiero-kappa-blue.vercel.app/) | [Ver repositorio de código]([https://github.com/pdawgabriel-hub/dashboard-financiero](https://github.com/pdawgabriel-hub/dashboard-financiero.git))
+    *   **Despliegue Activo:** Ver despliegue [despliegue en Vercel](https://dashboard-financiero-kappa-blue.vercel.app/) | Ver repositorio [Ver repositorio de código]([https://github.com/pdawgabriel-hub/dashboard-financiero](https://github.com/pdawgabriel-hub/dashboard-financiero.git))
 
  *   **Real-Time Data Dashboard (R & Shiny)**
     Proyecto de análisis y visualización de datos para complementar mi perfil de desarrollo web con capacidades de Ciencia de Datos.

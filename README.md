@@ -22,7 +22,7 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
     *   **Visualización:** Gráficos de balance e históricos con Recharts y sistema global de notificaciones reactivas a través de un contexto personalizado manejado por el hook `useToast`.
     *   **Despliegue Activo:** [Ver aplicación en vivo]([https://dashboard-financiero.vercel.app](https://dashboard-financiero-kappa-blue.vercel.app/)) | [Ver repositorio de código]([https://github.com/pdawgabriel-hub/dashboard-financiero](https://github.com/pdawgabriel-hub/dashboard-financiero.git))
 
- *   **Real-Time Data Dashboard (R & Shiny)** — *[WIP - En Planificación]*
+ *   **Real-Time Data Dashboard (R & Shiny)**
     Proyecto de análisis y visualización de datos para complementar mi perfil de desarrollo web con capacidades de Ciencia de Datos.
     *   **Características:** Arquitectura reactiva monolítica integrada (UI & Server) para procesar y filtrar datasets pesados en el lado del servidor sin sobrecargar el cliente.
     *   **Visualización:** Gráficos estadísticos dinámicos interactivos integrando ggplot2 con Plotly y renderizado de geolocalizaciones mediante Leaflet.

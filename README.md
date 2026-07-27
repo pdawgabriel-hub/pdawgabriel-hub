@@ -31,6 +31,14 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 
 ---
 
+### Próximamente
+
+*   **LuzPredict - Predicción del Precio de la Luz (PVPC) con Python** *(idea en fase de planificación, aún sin repositorio)*
+    Proyecto pensado para predecir el precio horario de la electricidad en España a partir de datos públicos reales de la API de ESIOS/REE, con un recomendador de las horas más económicas del día siguiente para el consumo doméstico.
+    *   **Enfoque técnico previsto:** Ingesta desde una API pública real (no dataset estático), *feature engineering* temporal (lags, festivos, estacionalidad), modelos de forecasting (LightGBM / Prophet) con validación temporal correcta, y despliegue en Streamlit Community Cloud.
+
+---
+
 ### Tecnologías y Herramientas
 
 **Ecosistema ERP y Frameworks**

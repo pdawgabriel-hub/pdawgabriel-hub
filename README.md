@@ -27,7 +27,7 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
     *   **Características:** Arquitectura modular en 14 módulos Shiny independientes siguiendo el patrón de Shiny Modules (`NS(id)` + `*UI()`/`*Server()`), filtros globales reactivos compartidos entre todos los módulos, y gestión de dependencias reproducible con `{renv}`.
     *   **Analítica & ML:** Modelo predictivo de precios por regresión, recomendador de inmuebles similares con K-Nearest Neighbors (KNN), detector automático de oportunidades de inversión y calculadora de rentabilidad con proyección de cash flow.
     *   **Visualización:** Mapa interactivo con capa de calor (`leaflet`/`leaflet.extras`), tablas interactivas (`DT`) y gráficos dinámicos con `plotly`.
-    *   **Despliegue Planificado:** [Ver repositorio de código](https://github.com/pdawgabriel-hub/geo-alquiler.git)
+    *   **Despliegue Planificado:** shinyapps.io (Cloud) | [Ver repositorio de código](https://github.com/pdawgabriel-hub/geo-alquiler)
 
 ---
 
@@ -47,11 +47,17 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Zod](https://img.shields.io/badge/-Zod-3E67B1?style=flat&logo=zod&logoColor=white)
 
-**Frontend, Estilos y Build Tools**
+**Frontend y Estilos**
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![Sass](https://img.shields.io/badge/-Sass-CC6699?style=flat&logo=sass&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
 ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat&logo=vite&logoColor=white)
+
+**Ciencia de Datos & Analítica (R)**
+![R](https://img.shields.io/badge/-R-276DC3?style=flat&logo=r&logoColor=white)
+![Shiny](https://img.shields.io/badge/-Shiny-blue?style=flat&logo=rstudio&logoColor=white)
+![Plotly](https://img.shields.io/badge/-Plotly-3F4F75?style=flat&logo=plotly&logoColor=white)
+![Leaflet](https://img.shields.io/badge/-Leaflet-199900?style=flat&logo=leaflet&logoColor=white)
 
 **Bases de Datos y Sistemas**
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)

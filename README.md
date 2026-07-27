@@ -22,11 +22,12 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
     *   **Visualización:** Gráficos de balance e históricos con Recharts y sistema global de notificaciones reactivas a través de un contexto personalizado manejado por el hook `useToast`.
     *   **Despliegue Activo:** Ver despliegue [despliegue en Vercel](https://dashboard-financiero-kappa-blue.vercel.app/) | Ver repositorio [Ver repositorio de código](https://github.com/pdawgabriel-hub/dashboard-financiero.git)
 
- *   **Real-Time Data Dashboard (R & Shiny)**
-    Proyecto de análisis y visualización de datos para complementar mi perfil de desarrollo web con capacidades de Ciencia de Datos.
-    *   **Características:** Arquitectura reactiva monolítica integrada (UI & Server) para procesar y filtrar datasets pesados en el lado del servidor sin sobrecargar el cliente.
-    *   **Visualización:** Gráficos estadísticos dinámicos interactivos integrando ggplot2 con Plotly y renderizado de geolocalizaciones mediante Leaflet.
-    *   **Despliegue Planificado:** shinyapps.io (Cloud) | *Repositorio de código próximamente.*
+*   **GeoAlquiler - Inteligencia Inmobiliaria y Análisis Espacial (R & Shiny)**
+    Aplicación web analítica construida como paquete de R (framework `{golem}`) que transforma datos de anuncios de alquiler en inteligencia de mercado accionable, combinando geolocalización, Machine Learning y herramientas de decisión de inversión inmobiliaria. *Por ahora, los datos son ficticios (generados de forma simulada) y el despliegue está en desarrollo.*
+    *   **Características:** Arquitectura modular en 14 módulos Shiny independientes siguiendo el patrón de Shiny Modules (`NS(id)` + `*UI()`/`*Server()`), filtros globales reactivos compartidos entre todos los módulos, y gestión de dependencias reproducible con `{renv}`.
+    *   **Analítica & ML:** Modelo predictivo de precios por regresión, recomendador de inmuebles similares con K-Nearest Neighbors (KNN), detector automático de oportunidades de inversión y calculadora de rentabilidad con proyección de cash flow.
+    *   **Visualización:** Mapa interactivo con capa de calor (`leaflet`/`leaflet.extras`), tablas interactivas (`DT`) y gráficos dinámicos con `plotly`.
+    *   **Despliegue Planificado:** [Ver repositorio de código](https://github.com/pdawgabriel-hub/geo-alquiler.git)
 
 ---
 

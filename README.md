@@ -12,6 +12,43 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
     *   **Backend & DB:** Diseño de 9 modelos principales en Python y PostgreSQL con lógica de persistencia, restricciones de negocio estrictas y auditoría de desgloses financieros. Los principales modelos son: Clientes, Especialistas, Gastos, Ingresos, Obras, PartesTrabajo, Presupuestos, Proveedores, Trabajadores.
     *   **Frontend Analítico:** Dashboard interactivo desarrollado con el framework **OWL (Odoo Workgroup Library)**, JS y CSS para renderizar KPIs de salud financiera y flujos de caja en vivo.
 
+<details>
+<summary><b>Haz clic aquí para ver las capturas de la interfaz y reportes del ERP</b></summary>
+
+<br>
+
+#### 1. Analytics & Dashboard Financiero
+
+| KPIs & Rentabilidad | Distribución de Costes |
+| :---: | :---: |
+| <img src="assets/dashboard-kpis-rentabilidad.png" width="400" alt="KPIs y Rentabilidad"> | <img src="assets/dashboard-distribucion-costes.png" width="400" alt="Distribución de Costes"> |
+| *Análisis de salud financiera e indicadores clave de rendimiento* | *Desglose analítico de costes directos e indirectos* |
+
+| Tesorería & Flujo de Caja | Evolución & Proyecciones |
+| :---: | :---: |
+| <img src="assets/dashboard-tesoreria.png" width="400" alt="Tesorería"> | <img src="assets/dashboard-proyecciones.png" width="400" alt="Evolución y Proyecciones"> |
+| *Control de liquidez, entradas y salidas en tiempo real* | *Previsiones presupuestarias e históricos de balance* |
+
+---
+
+#### 2. Vistas de Gestión y Modelos de Datos
+
+| Vista Kanban (Gestión de Obras / Proyectos) | Vista Formulario (Gestión de Partes de Trabajo) |
+| :---: | :---: |
+| <img src="assets/vista-kanban-obras.png" width="400" alt="Vista Kanban Obras"> | <img src="assets/vista-formulario-partes.png" width="400" alt="Vista Formulario Partes"> |
+| *Flujo visual de estados y seguimiento analítico por etapa* | *Lógica relacional avanzada, validaciones y restricciones de negocio* |
+
+---
+
+#### 3. Documentos y Reportes Impresos (PDF/QWeb)
+
+| Presupuesto de Obra | Informe de Estado de Obra | Parte de Trabajo Diario |
+| :---: | :---: | :---: |
+| <img src="assets/reporte-presupuesto.png" width="260" alt="Reporte Presupuesto"> | <img src="assets/reporte-informe-obra.png" width="260" alt="Reporte Informe Obra"> | <img src="assets/reporte-parte-trabajo.png" width="260" alt="Reporte Parte Trabajo"> |
+| *Presupuesto detallado para cliente con impuestos e imprevistos* | *Resumen ejecutivo de costes, avance y desviaciones* | *Control diario de mano de obra y materiales consumidos* |
+
+</details>
+
 ---
 
 ### Portfolio y Proyectos Destacados

@@ -64,7 +64,7 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
     *   **Características:** Arquitectura modular en 14 módulos Shiny independientes siguiendo el patrón de Shiny Modules (`NS(id)` + `*UI()`/`*Server()`), filtros globales reactivos compartidos entre todos los módulos, y gestión de dependencias reproducible con `{renv}`.
     *   **Analítica & ML:** Modelo predictivo de precios por regresión, recomendador de inmuebles similares con K-Nearest Neighbors (KNN), detector automático de oportunidades de inversión y calculadora de rentabilidad con proyección de cash flow.
     *   **Visualización:** Mapa interactivo con capa de calor (`leaflet`/`leaflet.extras`), tablas interactivas (`DT`) y gráficos dinámicos con `plotly`.
-    *   **Despliegue Planificado:** [Ver aplicación desplegada en shinyapps.io]([https://github.com/pdawgabriel-hub/geo-alquiler](https://pdawgabriel-hub.shinyapps.io/geoalquiler/))  | [Ver repositorio de código](https://github.com/pdawgabriel-hub/geo-alquiler)
+    *   **Despliegue Planificado:** Ver desplegue en shinyapps.io [desplegue en shinyapps.io]([https://github.com/pdawgabriel-hub/geo-alquiler](https://pdawgabriel-hub.shinyapps.io/geoalquiler/))  | [Ver repositorio de código](https://github.com/pdawgabriel-hub/geo-alquiler)
 
 ---
 

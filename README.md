@@ -40,7 +40,336 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 
 **Esquema Relacional Completo (33 tablas)**
 
-<img src="assets/esquema-relacional.png" width="900" alt="Esquema Relacional Completo">
+```mermaid
+%%{init: {"themeVariables": {"fontSize": "14px"}} }%%
+erDiagram
+
+  GESTION_CLIENTES {
+    varchar cliente_id PK
+    varchar nombre
+    varchar apellidos
+    varchar nombre_completo
+    varchar nif
+    varchar direccion
+    varchar cod_postal
+    varchar telf
+  }
+  GESTION_CLIENTES_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer cliente_id FK
+  }
+
+  GESTION_TRABAJADORES {
+    varchar trabajador_id PK
+    varchar tipo
+    varchar nombre
+    varchar apellido
+    varchar nombre_completo
+    varchar telf
+    float coste_hora_estandar
+    float horas_totales
+    float total_euros
+  }
+  GESTION_TRABAJADORES_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer trabajador_id FK
+  }
+  GESTION_TRABAJADORES_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer trabajadores_id FK
+  }
+  GESTION_TRABAJADORES_FALTA {
+    integer trabajador_id FK
+    date fecha_inicio
+    date fecha_fin
+    varchar tipo
+    text motivo
+    integer dias
+    varchar trabajador_nombre_completo
+  }
+
+  GESTION_PROVEEDORES {
+    varchar proveedor_id PK
+    varchar nombre
+    varchar direccion
+    varchar telf
+    varchar correo
+    varchar tipo
+    varchar ref
+    varchar documento
+    float base
+    float iva
+    float total
+  }
+  GESTION_PROVEEDORES_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer proveedor_id FK
+  }
+  GESTION_PROVEEDORES_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer proveedores_id FK
+  }
+
+  GESTION_ESPECIALISTAS {
+    varchar especialista_id PK
+    varchar tipo
+    varchar ref
+    varchar nombre
+    varchar telf
+    varchar correo
+    float importe
+  }
+  GESTION_ESPECIALISTAS_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer especialista_id FK
+  }
+  GESTION_ESPECIALISTAS_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer especialistas_id FK
+  }
+
+  GESTION_OBRAS {
+    varchar obra_id PK
+    text descripcion
+    float total
+    float horas_totales_obra
+    float coste_moo_obra
+    varchar estado_pago
+    varchar salud_obra
+    integer cliente_id FK
+  }
+  GESTION_OBRAS_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer obra_id FK
+  }
+  GESTION_OBRAS_INCIDENCIAS {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer obra_id FK
+  }
+  GESTION_OBRAS_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer obra_id FK
+  }
+
+  GESTION_PRESUPUESTOS {
+    varchar presupuesto_id PK
+    date fecha
+    integer anio
+    varchar nombre_cliente
+    varchar nif
+    varchar direccion
+    varchar telf
+    numeric base_imponible
+    float iva
+    numeric cuota_iva
+    numeric total
+    varchar estado
+    integer cliente_id FK
+    integer obra_id FK
+  }
+  GESTION_PRESUPUESTO_LINEA {
+    numeric precio
+    integer uds
+    text descripcion
+    numeric total_linea
+    integer presupuesto_id FK
+  }
+  GESTION_PRESUPUESTOS_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer presupuesto_id FK
+  }
+  GESTION_PRESUPUESTOS_INCIDENCIAS {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer presupuesto_id FK
+  }
+  GESTION_PRESUPUESTOS_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer presupuestos_id FK
+  }
+
+  GESTION_GASTOS {
+    varchar gasto_id PK
+    varchar estado
+    date inicio_obra
+    date fin_obra
+    varchar mandante
+    varchar gestion_licencia
+    varchar pago_icio
+    float ingresos
+    float gastos
+    float beneficio_real
+    float coste_proveedores
+    float coste_especialistas
+    float coste_moo
+    integer obra_id FK
+    integer presupuesto_id FK
+    integer cliente_id FK
+  }
+  GESTION_GASTOS_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer gasto_id FK
+  }
+
+  GESTION_INGRESOS {
+    varchar ingreso_id PK
+    varchar nombre_obra
+    varchar tipo
+    date fecha
+    integer anio
+    varchar documento
+    float importe
+    float total_ingresos
+    float debe
+    integer obra_id FK
+    integer cliente_id FK
+  }
+  GESTION_INGRESOS_OBSERVACIONES {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer ingreso_id FK
+  }
+  GESTION_INGRESOS_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer ingresos_id FK
+  }
+
+  GESTION_PARTES_TRABAJO {
+    date fecha
+    text descripcion
+    float horas_totales
+    float coste_total_parte
+    integer obra_id FK
+  }
+  GESTION_PARTES_TRABAJO_LINEA {
+    float horas
+    float coste_hora
+    float coste_subtotal
+    integer parte_id FK
+    integer trabajador_id FK
+  }
+
+  GESTION_PARTES_ESPECIALISTA {
+    integer obra_id FK
+    integer especialista_id FK
+    varchar especialista_nombre
+    date fecha
+    text descripcion
+    varchar documento
+    float importe
+    varchar estado_pago
+  }
+  GESTION_PARTES_ESPECIALISTA_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer parte_id FK
+  }
+
+  GESTION_PARTES_PROVEEDOR {
+    integer obra_id FK
+    integer proveedor_id FK
+    varchar proveedor_nombre
+    date fecha
+    text descripcion
+    varchar documento
+    float importe
+    varchar estado_pago
+  }
+  GESTION_PARTES_PROVEEDOR_ARCHIVO {
+    bytea archivo
+    varchar nombre_archivo
+    varchar tipo
+    integer parte_id FK
+  }
+
+  %% ── Relaciones 1:N (Many2one en la tabla hija, One2many como vista inversa) ──
+  GESTION_CLIENTES ||--o{ GESTION_CLIENTES_OBSERVACIONES : cliente_id
+  GESTION_CLIENTES ||--o{ GESTION_OBRAS : cliente_id
+  GESTION_CLIENTES ||--o{ GESTION_PRESUPUESTOS : cliente_id
+  GESTION_CLIENTES ||--o{ GESTION_INGRESOS : cliente_id
+  GESTION_CLIENTES ||--o{ GESTION_GASTOS : "cliente_id (related)"
+
+  GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_OBSERVACIONES : trabajador_id
+  GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_ARCHIVO : trabajadores_id
+  GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_FALTA : trabajador_id
+  GESTION_TRABAJADORES ||--o{ GESTION_PARTES_TRABAJO_LINEA : trabajador_id
+
+  GESTION_PROVEEDORES ||--o{ GESTION_PROVEEDORES_OBSERVACIONES : proveedor_id
+  GESTION_PROVEEDORES ||--o{ GESTION_PROVEEDORES_ARCHIVO : proveedores_id
+  GESTION_PROVEEDORES ||--o{ GESTION_PARTES_PROVEEDOR : proveedor_id
+
+  GESTION_ESPECIALISTAS ||--o{ GESTION_ESPECIALISTAS_OBSERVACIONES : especialista_id
+  GESTION_ESPECIALISTAS ||--o{ GESTION_ESPECIALISTAS_ARCHIVO : especialistas_id
+  GESTION_ESPECIALISTAS ||--o{ GESTION_PARTES_ESPECIALISTA : especialista_id
+
+  GESTION_OBRAS ||--o{ GESTION_OBRAS_OBSERVACIONES : obra_id
+  GESTION_OBRAS ||--o{ GESTION_OBRAS_INCIDENCIAS : obra_id
+  GESTION_OBRAS ||--o{ GESTION_OBRAS_ARCHIVO : obra_id
+  GESTION_OBRAS ||--o{ GESTION_PRESUPUESTOS : obra_id
+  GESTION_OBRAS ||--o{ GESTION_INGRESOS : obra_id
+  GESTION_OBRAS ||--o{ GESTION_PARTES_TRABAJO : obra_id
+  GESTION_OBRAS ||--o{ GESTION_PARTES_ESPECIALISTA : obra_id
+  GESTION_OBRAS ||--o{ GESTION_PARTES_PROVEEDOR : obra_id
+  GESTION_OBRAS ||--|| GESTION_GASTOS : "obra_id (1:1 unique)"
+
+  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTO_LINEA : presupuesto_id
+  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_OBSERVACIONES : presupuesto_id
+  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_INCIDENCIAS : presupuesto_id
+  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_ARCHIVO : presupuestos_id
+  GESTION_PRESUPUESTOS ||--o{ GESTION_GASTOS : "presupuesto_id (opcional)"
+
+  GESTION_GASTOS ||--o{ GESTION_GASTOS_ARCHIVO : gasto_id
+
+  GESTION_INGRESOS ||--o{ GESTION_INGRESOS_OBSERVACIONES : ingreso_id
+  GESTION_INGRESOS ||--o{ GESTION_INGRESOS_ARCHIVO : ingresos_id
+
+  GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_LINEA : parte_id
+  GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_ARCHIVO : parte_id
+  GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_ARCHIVO : parte_id
+
+  %% ── Relaciones N:M (tabla puente) ──
+  GESTION_TRABAJADORES }o--o{ GESTION_OBRAS : obra_ids
+  GESTION_PROVEEDORES }o--o{ GESTION_PRESUPUESTOS : "presupuesto_ids (tabla proveedor_id)"
+  GESTION_PROVEEDORES }o--o{ GESTION_OBRAS : obra_ids
+  GESTION_ESPECIALISTAS }o--o{ GESTION_PRESUPUESTOS : "presupuesto_ids (tabla especialista_id)"
+  GESTION_ESPECIALISTAS }o--o{ GESTION_OBRAS : obra_ids
+  GESTION_PRESUPUESTOS }o--o{ GESTION_PROVEEDORES : "proveedor_ids (independiente)"
+  GESTION_PRESUPUESTOS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids (independiente)"
+  GESTION_OBRAS }o--o{ GESTION_TRABAJADORES : "trabajador_ids (calculado)"
+  GESTION_OBRAS }o--o{ GESTION_PROVEEDORES : "proveedor_ids (calculado)"
+  GESTION_OBRAS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids (calculado)"
+```
 
 *Diagrama entidad-relación completo generado a partir de los modelos Odoo — clic para ampliar.*
 

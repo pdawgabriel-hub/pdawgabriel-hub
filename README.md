@@ -40,7 +40,7 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 
 **Esquema Relacional Completo (33 tablas)**
 
-<img src="assets/esquema-bd-completo.png" width="900" alt="Esquema Relacional Completo">
+<img src="assets/esquema-relacional.png" width="900" alt="Esquema Relacional Completo">
 
 *Diagrama entidad-relación completo generado a partir de los modelos Odoo — clic para ampliar.*
 

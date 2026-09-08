@@ -9,8 +9,8 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 *   Finalizando el Grado Superior de **Desarrollo de Aplicaciones Web (DAW)** en el CIFP Carlos III.
 *   **ERP a Medida para el Sector de la Construcción y Reformas (Odoo 18)**:
     Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real.
-    *   **Backend & DB:** Diseño de 9 modelos principales en Python y PostgreSQL con lógica de persistencia, restricciones de negocio estrictas y auditoría de desgloses financieros. Los principales modelos son: Clientes, Especialistas, Gastos, Ingresos, Obras, PartesTrabajo, Presupuestos, Proveedores, Trabajadores.
-    *   **Frontend Analítico:** Dashboard interactivo desarrollado con el framework **OWL (Odoo Workgroup Library)**, JS y CSS para renderizar KPIs de salud financiera y flujos de caja en vivo.
+    *   **Backend & DB:** Diseño de 14 modelos de negocio en Python sobre PostgreSQL (33 tablas en total contando submodelos de auditoría, adjuntos e incidencias), con restricciones de negocio (`@api.constrains`), campos calculados que se recalculan en tiempo real y cobertura de tests automatizados sobre la lógica financiera crítica. Modelos principales: Clientes, Trabajadores, Proveedores, Especialistas, Obras, Presupuestos (+ Líneas de Reforma), Gastos, Ingresos, Partes de Trabajo (+ Líneas), Partes de Especialista, Partes de Proveedor y Faltas de Trabajadores.
+    *   **Frontend Analítico:** Dashboard interactivo desarrollado con el framework **OWL (Odoo Web Library)**, JS y CSS para renderizar KPIs de salud financiera y flujos de caja en vivo.
 
 <details>
 <summary><b>Haz clic aquí para ver las capturas de la interfaz y reportes del ERP</b></summary>
@@ -37,6 +37,12 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 | :---: | :---: |
 | <img src="assets/vista-kanban-obras.png" width="400" alt="Vista Kanban Obras"> | <img src="assets/vista-formulario-partes.png" width="400" alt="Vista Formulario Partes"> |
 | *Flujo visual de estados y seguimiento analítico por etapa* | *Lógica relacional avanzada, validaciones y restricciones de negocio* |
+
+**Esquema Relacional Completo (33 tablas)**
+
+<img src="assets/esquema-bd-completo.png" width="900" alt="Esquema Relacional Completo">
+
+*Diagrama entidad-relación completo generado a partir de los modelos Odoo — clic para ampliar.*
 
 ---
 

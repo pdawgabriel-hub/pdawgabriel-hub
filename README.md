@@ -8,9 +8,10 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 
 *   Finalizando el Grado Superior de **Desarrollo de Aplicaciones Web (DAW)** en el CIFP Carlos III.
 *   **ERP a Medida para el Sector de la Construcción y Reformas (Odoo 18)**:
-    Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real.
+    Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real. Cubre todo el ciclo de una obra — cliente → presupuesto (con IVA y líneas de reforma) → obra → ejecución (partes de trabajo, especialistas y proveedores) → cierre financiero (ingresos, gastos, beneficio real y saldo pendiente) — con roles de usuario diferenciados y un panel de Análisis Financiero agregado de toda la cartera de obras.
     *   **Backend & DB:** Diseño de 14 modelos de negocio en Python sobre PostgreSQL (33 tablas en total contando submodelos de auditoría, adjuntos e incidencias), con restricciones de negocio (`@api.constrains`), campos calculados que se recalculan en tiempo real y cobertura de tests automatizados sobre la lógica financiera crítica. Modelos principales: Clientes, Trabajadores, Proveedores, Especialistas, Obras, Presupuestos (+ Líneas de Reforma), Gastos, Ingresos, Partes de Trabajo (+ Líneas), Partes de Especialista, Partes de Proveedor y Faltas de Trabajadores.
     *   **Frontend Analítico:** Dashboard interactivo desarrollado con el framework **OWL (Odoo Web Library)**, JS y CSS para renderizar KPIs de salud financiera y flujos de caja en vivo.
+    *   **Documentación:** Informe técnico completo (arquitectura, cada modelo con sus relaciones y métodos), esquema relacional en SQL y diagrama entidad-relación, y guía de usuario en PDF — pensada también como base para la futura migración de este mismo proyecto a otro stack (ver "Próximamente").
 
 <details>
 <summary><b>Haz clic aquí para ver las capturas de la interfaz y reportes del ERP</b></summary>
@@ -404,6 +405,9 @@ erDiagram
 ---
 
 ### Próximamente
+
+*   **Migración del ERP de Construcción a SAP ABAP / HANA** *(planificación)*
+    Llevar el ERP de gestión de obras (hoy en Odoo 18) a SAP S/4HANA, reimplementando el mismo modelo de datos y la misma lógica de negocio — presupuestos, obras, partes de trabajo/especialista/proveedor y seguimiento financiero — en ABAP sobre HANA, apoyándose en la documentación técnica ya generada del proyecto original (esquema relacional, modelos y métodos) como base de la migración.
 
 *   **LuzPredict - Predicción del Precio de la Luz (PVPC) con Python** *(idea en fase de planificación, aún sin repositorio)*
     Proyecto pensado para predecir el precio horario de la electricidad en España a partir de datos públicos reales de la API de ESIOS/REE, con un recomendador de las horas más económicas del día siguiente para el consumo doméstico.

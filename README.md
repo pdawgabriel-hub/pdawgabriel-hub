@@ -390,16 +390,17 @@ erDiagram
 ### Portfolio y Proyectos Destacados
 
 *   **ERP Construcción - Dashboard Financiero (React & TypeScript)**
-    Ecosistema frontend modular e inteligente para el análisis contable y control presupuestario de obras en tiempo real.
-    *   **Características:** Arquitectura basada en componentes atómicos, filtrado predictivo relacional optimizado con `useMemo` (inmune a discrepancias de texto), y automatización interactiva de importes netos/IVA mediante React Hook Form y Zod.
+    Ecosistema frontend modular e inteligente para el análisis contable y control presupuestario de obras en tiempo real, adaptando a una versión 100% frontend (sin backend ni base de datos física, persistencia en `localStorage` versionado) el modelo de negocio de 13 entidades del ERP a medida hecho sobre Odoo.
+    *   **Características:** Vistas intercambiables de tarjetas/lista con tarjetas totalmente clicables, registros relacionados tipo "smart button" en cada ficha (Cliente, Obra, Trabajador...), calendario mensual tipo Google Calendar, autocompletado con combobox buscable en los selectores de relación, y filtrado predictivo relacional optimizado con `useMemo` (inmune a discrepancias de texto).
+    *   **Formularios y Documentos:** Automatización interactiva de importes netos/IVA mediante React Hook Form y Zod, y exportación a PDF (Presupuestos, Partes de Trabajo, seguimiento de Gastos) vía páginas de impresión dedicadas y `window.print()`.
     *   **Visualización:** Gráficos de balance e históricos con Recharts y sistema global de notificaciones reactivas a través de un contexto personalizado manejado por el hook `useToast`.
     *   **Despliegue Activo:** Ver despliegue [despliegue en Vercel](https://dashboard-financiero-kappa-blue.vercel.app/) | Ver repositorio [Ver repositorio de código](https://github.com/pdawgabriel-hub/dashboard-financiero.git)
 
 *   **GeoAlquiler - Inteligencia Inmobiliaria y Análisis Espacial (R & Shiny)**
-    Aplicación web analítica construida como paquete de R (framework `{golem}`) que transforma datos de anuncios de alquiler en inteligencia de mercado accionable, combinando geolocalización, Machine Learning y herramientas de decisión de inversión inmobiliaria. *Por ahora, los datos son ficticios (generados de forma simulada) y el despliegue está en desarrollo.*
+    Aplicación web analítica construida como paquete de R (framework `{golem}`) que transforma datos de anuncios de alquiler en inteligencia de mercado accionable, combinando geolocalización, Machine Learning y herramientas de decisión de inversión inmobiliaria. Los precios por zona proceden de fuentes reales (Generalitat de Catalunya, Generalitat Valenciana y Gobierno Vasco) mediante un pipeline de ingesta propio, con anclas documentadas a mano donde no existe fuente oficial.
     *   **Características:** Arquitectura modular en 14 módulos Shiny independientes siguiendo el patrón de Shiny Modules (`NS(id)` + `*UI()`/`*Server()`), filtros globales reactivos compartidos entre todos los módulos, y gestión de dependencias reproducible con `{renv}`.
-    *   **Analítica & ML:** Modelo predictivo de precios por regresión, recomendador de inmuebles similares con K-Nearest Neighbors (KNN), detector automático de oportunidades de inversión y calculadora de rentabilidad con proyección de cash flow.
-    *   **Visualización:** Mapa interactivo con capa de calor (`leaflet`/`leaflet.extras`), tablas interactivas (`DT`) y gráficos dinámicos con `plotly`.
+    *   **Analítica & ML:** Modelo predictivo de precios por regresión, recomendador de inmuebles similares con K-Nearest Neighbors (KNN), detector automático de oportunidades de inversión, calculadora de rentabilidad con proyección de cash flow e informe ejecutivo descargable.
+    *   **Visualización y Rendimiento:** Mapa interactivo con capa de calor (`leaflet`/`leaflet.extras`) agregado por barrio en servidor, tablas interactivas (`DT`) y gráficos dinámicos con `plotly` nativo (histogramas pre-agregados y submuestreo en gráficos densos) para un buen rendimiento incluso en móvil.
     *   **Despliegue Activo:** [Ver despliegue en shinyapps.io](https://pdawgabriel-hub.shinyapps.io/geoalquiler/) | [Ver repositorio de código](https://github.com/pdawgabriel-hub/geo-alquiler)
 
 ---

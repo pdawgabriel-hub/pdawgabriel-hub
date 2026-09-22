@@ -7,6 +7,33 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 ### En qué estoy trabajando ahora
 
 *   Finalizando el Grado Superior de **Desarrollo de Aplicaciones Web (DAW)** en el CIFP Carlos III.
+*   **Rock & Roll Pizza — Web para un cliente real (Astro & Sanity)**:
+    Proyecto real para una pizzería, con la que sustituyo un WordPress inicial por una web más ligera y con más código propio, alineada con el módulo de Desarrollo en Entorno Servidor. Aún en fase de diseño y maquetación.
+    *   **Funciones:** portada, oferta de la semana editable por el cliente (con fecha de inicio y fin), carta (imágenes y PDF descargable), sección "Quiénes somos" y contacto con dirección, teléfono y horario.
+    *   **Gestión de contenido:** el cliente cambia la oferta y los datos del negocio desde un panel propio (Sanity Studio), con correo y contraseña, sin tocar código; la web se reconstruye sola al publicar.
+    *   **Estado:** en desarrollo, trabajando el diseño y el contenido antes de conectar el panel y pasar a producción. El repositorio es privado por tratarse de un proyecto de cliente.
+    *   **Demo (previa a producción):** [Ver demo en Vercel](https://rock-and-roll-pizza.vercel.app/)
+
+<details>
+<summary><b>Haz clic aquí para ver la estructura del proyecto</b></summary>
+
+<br>
+
+```
+rock-and-roll-pizza/
+├── web/                  # Astro + Tailwind
+│   ├── src/
+│   │   ├── assets/       # logo, imágenes
+│   │   ├── components/   # Header, Hero, Oferta, Carta, Nosotros, Contacto, Footer
+│   │   ├── data/         # datos de ejemplo (site, oferta)
+│   │   ├── layouts/
+│   │   └── pages/
+│   └── public/
+└── studio/               # Sanity Studio (panel del cliente)
+```
+
+</details>
+
 *   **ERP a Medida para el Sector de la Construcción y Reformas (Odoo 18)**:
     Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real. Cubre todo el ciclo de una obra — cliente → presupuesto (con IVA y líneas de reforma) → obra → ejecución (partes de trabajo, especialistas y proveedores) → cierre financiero (ingresos, gastos, beneficio real y saldo pendiente) — con roles de usuario diferenciados y un panel de Análisis Financiero agregado de toda la cartera de obras.
     *   **Backend & DB:** Diseño de 14 modelos de negocio en Python sobre PostgreSQL (33 tablas en total contando submodelos de auditoría, adjuntos e incidencias), con restricciones de negocio (`@api.constrains`), campos calculados que se recalculan en tiempo real y cobertura de tests automatizados sobre la lógica financiera crítica. Modelos principales: Clientes, Trabajadores, Proveedores, Especialistas, Obras, Presupuestos (+ Líneas de Reforma), Gastos, Ingresos, Partes de Trabajo (+ Líneas), Partes de Especialista, Partes de Proveedor y Faltas de Trabajadores.
@@ -428,6 +455,7 @@ erDiagram
 
 **Frontend & UI**
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![Astro](https://img.shields.io/badge/-Astro-BC52EE?style=flat&logo=astro&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 ![Sass](https://img.shields.io/badge/-Sass-CC6699?style=flat&logo=sass&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
@@ -449,6 +477,8 @@ erDiagram
 ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat&logo=linux&logoColor=black)
+![Sanity](https://img.shields.io/badge/-Sanity-F03E2F?style=flat&logo=sanity&logoColor=white)
+![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
 ---
 

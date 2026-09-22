@@ -8,7 +8,7 @@ Desarrollador Web en Formación en el CIFP Carlos III (DAW) | Técnico en Sistem
 
 *   Finalizando el Grado Superior de **Desarrollo de Aplicaciones Web (DAW)** en el CIFP Carlos III.
 *   **Rock & Roll Pizza — Web para un cliente real (Astro & Sanity)**:
-    Proyecto real para una pizzería, con la que sustituyo un WordPress inicial por una web más ligera y con más código propio, alineada con el módulo de Desarrollo en Entorno Servidor. Aún en fase de diseño y maquetación.
+    Proyecto real para una pizzería, con la que sustituyo un WordPress inicial por una web más ligera. Aún en fase de diseño y maquetación.
     *   **Funciones:** portada, oferta de la semana editable por el cliente (con fecha de inicio y fin), carta (imágenes y PDF descargable), sección "Quiénes somos" y contacto con dirección, teléfono y horario.
     *   **Gestión de contenido:** el cliente cambia la oferta y los datos del negocio desde un panel propio (Sanity Studio), con correo y contraseña, sin tocar código; la web se reconstruye sola al publicar.
     *   **Estado:** en desarrollo, trabajando el diseño y el contenido antes de conectar el panel y pasar a producción. El repositorio es privado por tratarse de un proyecto de cliente.

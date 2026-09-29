@@ -35,10 +35,12 @@ rock-and-roll-pizza/
 </details>
 
 *   **ERP a Medida para el Sector de la Construcción y Reformas (Odoo 18)**:
-    Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real. Cubre todo el ciclo de una obra — cliente → presupuesto (con IVA y líneas de reforma) → obra → ejecución (partes de trabajo, especialistas y proveedores) → cierre financiero (ingresos, gastos, beneficio real y saldo pendiente) — con roles de usuario diferenciados y un panel de Análisis Financiero agregado de toda la cartera de obras.
-    *   **Backend & DB:** Diseño de 14 modelos de negocio en Python sobre PostgreSQL (33 tablas en total contando submodelos de auditoría, adjuntos e incidencias), con restricciones de negocio (`@api.constrains`), campos calculados que se recalculan en tiempo real y cobertura de tests automatizados sobre la lógica financiera crítica. Modelos principales: Clientes, Trabajadores, Proveedores, Especialistas, Obras, Presupuestos (+ Líneas de Reforma), Gastos, Ingresos, Partes de Trabajo (+ Líneas), Partes de Especialista, Partes de Proveedor y Faltas de Trabajadores.
-    *   **Frontend Analítico:** Dashboard interactivo desarrollado con el framework **OWL (Odoo Web Library)**, JS y CSS para renderizar KPIs de salud financiera y flujos de caja en vivo.
-    *   **Documentación:** Informe técnico completo (arquitectura, cada modelo con sus relaciones y métodos), esquema relacional en SQL y diagrama entidad-relación, y guía de usuario en PDF — pensada también como base para la futura migración de este mismo proyecto a otro stack (ver "Próximamente").
+    Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real. Cubre todo el ciclo de una obra — cliente → presupuesto (con IVA y líneas de reforma) → obra → ejecución (partes de trabajo, especialistas y proveedores) → cierre financiero (ingresos, gastos, beneficio real y saldo pendiente) — con roles de usuario diferenciados y un panel de Análisis Financiero agregado de toda la cartera de obras. Desarrollado para una empresa real de construcción y reformas; preparado para su despliegue en el servidor del cliente.
+    *   **Backend & DB:** Diseño de 14 modelos de negocio en Python sobre PostgreSQL (41 tablas: 35 de datos, incluidos los historiales de observaciones e incidencias y los adjuntos, y 6 tablas puente), con restricciones de negocio (`@api.constrains`), campos calculados que se recalculan en tiempo real y 19 tests automatizados sobre la lógica financiera y la integridad de los datos. Modelos principales: Clientes, Trabajadores, Proveedores, Especialistas, Obras, Presupuestos (+ Líneas de Reforma), Gastos, Ingresos, Partes de Trabajo (+ Líneas), Partes de Especialista, Partes de Proveedor y Faltas de Trabajadores.
+    *   **Integridad de datos:** Presupuestos e ingresos siempre del cliente de su obra, todo cobro ligado a una obra, obras con cobros protegidas contra el borrado, borrados en cascada a través del ORM (recalculando los acumulados y eliminando también los ficheros adjuntos), ficha financiera 1:1 que nace y desaparece con su obra, y migraciones de datos versionadas para cambios con la base de datos ya en producción.
+    *   **Frontend Analítico:** Dashboard interactivo desarrollado con el framework **OWL (Odoo Web Library)**, JS y CSS para renderizar KPIs de salud financiera y flujos de caja en vivo. Interfaz adaptada también a móvil.
+    *   **Infraestructura y Despliegue:** Docker Compose con Odoo, PostgreSQL y Nginx Proxy Manager (HTTPS con Let's Encrypt), volúmenes persistentes con nombre, puertos internos accesibles solo en local, copias de seguridad automáticas de la base de datos y de los adjuntos con restauración verificada, plantillas de configuración y flujo de ramas `develop`/`main`. Los datos de demostración solo se generan en bases de datos de desarrollo, para no trabajar nunca con datos reales de clientes fuera de producción.
+    *   **Documentación:** Informe técnico completo (arquitectura, cada modelo con sus campos, relaciones y métodos, y las reglas de negocio independientes del framework con una guía para reimplementarlo en otro stack: modelo relacional, equivalencias de conceptos de Odoo y escenario de pruebas), esquema SQL contrastado con la base de datos real y diagramas entidad-relación, guía de usuario de 37 páginas (cada pantalla, campo, filtro y agrupación explicados sin tecnicismos) y guía de despliegue paso a paso con lista de comprobación para producción — base para la futura migración de este mismo proyecto a otro stack (ver "Próximamente").
 
 <details>
 <summary><b>Haz clic aquí para ver las capturas de la interfaz y reportes del ERP</b></summary>
@@ -66,7 +68,7 @@ rock-and-roll-pizza/
 | <img src="assets/vista-kanban-obras.png" width="400" alt="Vista Kanban Obras"> | <img src="assets/vista-formulario-partes.png" width="400" alt="Vista Formulario Partes"> |
 | *Flujo visual de estados y seguimiento analítico por etapa* | *Lógica relacional avanzada, validaciones y restricciones de negocio* |
 
-**Esquema Relacional Completo (33 tablas)**
+**Esquema Relacional Completo (41 tablas)**
 
 ```mermaid
 %%{init: {"themeVariables": {"fontSize": "14px"}} }%%
@@ -107,7 +109,7 @@ erDiagram
     integer trabajador_id FK
   }
   GESTION_TRABAJADORES_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer trabajadores_id FK
@@ -142,7 +144,7 @@ erDiagram
     integer proveedor_id FK
   }
   GESTION_PROVEEDORES_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer proveedores_id FK
@@ -164,7 +166,7 @@ erDiagram
     integer especialista_id FK
   }
   GESTION_ESPECIALISTAS_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer especialistas_id FK
@@ -193,7 +195,7 @@ erDiagram
     integer obra_id FK
   }
   GESTION_OBRAS_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer obra_id FK
@@ -235,7 +237,7 @@ erDiagram
     integer presupuesto_id FK
   }
   GESTION_PRESUPUESTOS_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer presupuestos_id FK
@@ -260,7 +262,7 @@ erDiagram
     integer cliente_id FK
   }
   GESTION_GASTOS_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer gasto_id FK
@@ -286,7 +288,7 @@ erDiagram
     integer ingreso_id FK
   }
   GESTION_INGRESOS_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
     integer ingresos_id FK
@@ -306,6 +308,12 @@ erDiagram
     integer parte_id FK
     integer trabajador_id FK
   }
+  GESTION_PARTES_TRABAJO_INCIDENCIAS {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
+    integer parte_id FK
+  }
 
   GESTION_PARTES_ESPECIALISTA {
     integer obra_id FK
@@ -318,9 +326,15 @@ erDiagram
     varchar estado_pago
   }
   GESTION_PARTES_ESPECIALISTA_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
+    integer parte_id FK
+  }
+  GESTION_PARTES_ESPECIALISTA_INCIDENCIAS {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
     integer parte_id FK
   }
 
@@ -335,9 +349,15 @@ erDiagram
     varchar estado_pago
   }
   GESTION_PARTES_PROVEEDOR_ARCHIVO {
-    bytea archivo
+    binary archivo "fichero en filestore"
     varchar nombre_archivo
     varchar tipo
+    integer parte_id FK
+  }
+  GESTION_PARTES_PROVEEDOR_INCIDENCIAS {
+    timestamp fecha_hora
+    integer usuario_id FK
+    text texto
     integer parte_id FK
   }
 
@@ -383,20 +403,22 @@ erDiagram
   GESTION_INGRESOS ||--o{ GESTION_INGRESOS_ARCHIVO : ingresos_id
 
   GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_LINEA : parte_id
+  GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_INCIDENCIAS : parte_id
   GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_ARCHIVO : parte_id
+  GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_INCIDENCIAS : parte_id
   GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_ARCHIVO : parte_id
+  GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_INCIDENCIAS : parte_id
 
   %% ── Relaciones N:M (tabla puente) ──
-  GESTION_TRABAJADORES }o--o{ GESTION_OBRAS : obra_ids
-  GESTION_PROVEEDORES }o--o{ GESTION_PRESUPUESTOS : "presupuesto_ids (tabla proveedor_id)"
-  GESTION_PROVEEDORES }o--o{ GESTION_OBRAS : obra_ids
-  GESTION_ESPECIALISTAS }o--o{ GESTION_PRESUPUESTOS : "presupuesto_ids (tabla especialista_id)"
-  GESTION_ESPECIALISTAS }o--o{ GESTION_OBRAS : obra_ids
-  GESTION_PRESUPUESTOS }o--o{ GESTION_PROVEEDORES : "proveedor_ids (independiente)"
-  GESTION_PRESUPUESTOS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids (independiente)"
-  GESTION_OBRAS }o--o{ GESTION_TRABAJADORES : "trabajador_ids (calculado)"
-  GESTION_OBRAS }o--o{ GESTION_PROVEEDORES : "proveedor_ids (calculado)"
-  GESTION_OBRAS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids (calculado)"
+  %% Obras <-> Trabajadores/Proveedores/Especialistas: UNA sola tabla puente por
+  %% pareja, compartida por el campo calculado de la obra y el obra_ids del recurso.
+  GESTION_OBRAS }o--o{ GESTION_TRABAJADORES : "trabajador_ids calculado = obra_ids (solo lectura)"
+  GESTION_OBRAS }o--o{ GESTION_PROVEEDORES : "proveedor_ids calculado = obra_ids (solo lectura)"
+  GESTION_OBRAS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids calculado = obra_ids (solo lectura)"
+  GESTION_TRABAJADORES }o--o{ GESTION_PARTES_TRABAJO : "parte_trabajo_ids (calculado)"
+  %% Presupuestos <-> Proveedores/Especialistas: una tabla puente por pareja, vista desde los dos lados.
+  GESTION_PRESUPUESTOS }o--o{ GESTION_PROVEEDORES : "proveedor_ids = presupuesto_ids"
+  GESTION_PRESUPUESTOS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids = presupuesto_ids"
 ```
 
 *Diagrama entidad-relación completo generado a partir de los modelos Odoo — clic para ampliar.*

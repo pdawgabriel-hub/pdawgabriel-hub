@@ -14,25 +14,25 @@ Desarrollador Web en Formación en el CIFP Carlos III (GSDAW) | Técnico en Sist
     *   **Estado:** en desarrollo, trabajando el diseño y el contenido antes de conectar el panel y pasar a producción. El repositorio es privado por tratarse de un proyecto de cliente.
     *   **Demo (previa a producción):** [Ver demo en Vercel](https://rock-and-roll-pizza.vercel.app/)
 
-<details>
-<summary><b>Haz clic aquí para ver la estructura del proyecto</b></summary>
+    <details>
+    <summary><b>Haz clic aquí para ver la estructura del proyecto</b></summary>
 
-<br>
+    <br>
 
-```
-rock-and-roll-pizza/
-├── web/                  # Astro + Tailwind
-│   ├── src/
-│   │   ├── assets/       # logo, imágenes
-│   │   ├── components/   # Header, Hero, Oferta, Carta, Nosotros, Contacto, Footer
-│   │   ├── data/         # datos de ejemplo (site, oferta)
-│   │   ├── layouts/
-│   │   └── pages/
-│   └── public/
-└── studio/               # Sanity Studio (panel del cliente)
-```
+    ```
+    rock-and-roll-pizza/
+    ├── web/                  # Astro + Tailwind
+    │   ├── src/
+    │   │   ├── assets/       # logo, imágenes
+    │   │   ├── components/   # Header, Hero, Oferta, Carta, Nosotros, Contacto, Footer
+    │   │   ├── data/         # datos de ejemplo (site, oferta)
+    │   │   ├── layouts/
+    │   │   └── pages/
+    │   └── public/
+    └── studio/               # Sanity Studio (panel del cliente)
+    ```
 
-</details>
+    </details>
 
 *   **ERP a Medida para el Sector de la Construcción y Reformas (Odoo 18)**:
     Un sistema integral diseñado para automatizar la carga administrativa y mitigar pérdidas económicas mediante un control financiero estricto en tiempo real. Cubre todo el ciclo de una obra — cliente → presupuesto (con IVA y líneas de reforma) → obra → ejecución (partes de trabajo, especialistas y proveedores) → cierre financiero (ingresos, gastos, beneficio real y saldo pendiente) — con roles de usuario diferenciados y un panel de Análisis Financiero agregado de toda la cartera de obras. Desarrollado para una empresa real de construcción y reformas y **en producción** desde octubre de 2026, en un VPS en la UE con dominio propio y HTTPS.
@@ -42,401 +42,426 @@ rock-and-roll-pizza/
     *   **Infraestructura y Despliegue:** Docker Compose con Odoo, PostgreSQL y Nginx Proxy Manager (HTTPS con Let's Encrypt), volúmenes persistentes con nombre, puertos internos accesibles solo en local, copias de seguridad automáticas de la base de datos y de los adjuntos con restauración verificada, plantillas de configuración y flujo de ramas `develop`/`main`. Los datos de demostración solo se generan en bases de datos de desarrollo, para no trabajar nunca con datos reales de clientes fuera de producción. Desplegado en producción por SSH solo con clave, firewall con únicamente los puertos web abiertos, actualizaciones de seguridad automáticas y *deploy key* de solo lectura, con arranque automático verificado tras reiniciar el servidor.
     *   **Documentación:** Informe técnico completo (arquitectura, cada modelo con sus campos, relaciones y métodos, y las reglas de negocio independientes del framework con una guía para reimplementarlo en otro stack: modelo relacional, equivalencias de conceptos de Odoo y escenario de pruebas), esquema SQL contrastado con la base de datos real y diagramas entidad-relación, guía de usuario de 38 páginas (cada pantalla, campo, filtro y agrupación explicados sin tecnicismos), guía de despliegue paso a paso con lista de comprobación para producción y registro del despliegue real (incidencias, mantenimiento y renovaciones) — base para la futura migración de este mismo proyecto a otro stack (ver "Próximamente").
 
-<details>
-<summary><b>Haz clic aquí para ver las capturas de la interfaz y reportes del ERP</b></summary>
+    <details>
+    <summary><b>Haz clic aquí para ver las capturas de la interfaz y reportes del ERP</b></summary>
 
-<br>
+    <br>
 
-#### 1. Analytics & Dashboard Financiero
+    #### 1. Analytics & Dashboard Financiero
 
-| KPIs & Rentabilidad | Distribución de Costes |
-| :---: | :---: |
-| <img src="assets/dashboard-kpis-rentabilidad.png" width="400" alt="KPIs y Rentabilidad"> | <img src="assets/dashboard-distribucion-costes.png" width="400" alt="Distribución de Costes"> |
-| *Análisis de salud financiera e indicadores clave de rendimiento* | *Desglose analítico de costes directos e indirectos* |
+    | KPIs & Rentabilidad | Distribución de Costes |
+    | :---: | :---: |
+    | <img src="assets/dashboard-kpis-rentabilidad.png" width="400" alt="KPIs y Rentabilidad"> | <img src="assets/dashboard-distribucion-costes.png" width="400" alt="Distribución de Costes"> |
+    | *Análisis de salud financiera e indicadores clave de rendimiento* | *Desglose analítico de costes directos e indirectos* |
 
-| Tesorería & Flujo de Caja | Evolución & Proyecciones |
-| :---: | :---: |
-| <img src="assets/dashboard-tesoreria.png" width="400" alt="Tesorería"> | <img src="assets/dashboard-proyecciones.png" width="400" alt="Evolución y Proyecciones"> |
-| *Control de liquidez, entradas y salidas en tiempo real* | *Previsiones presupuestarias e históricos de balance* |
+    | Tesorería & Flujo de Caja | Evolución & Proyecciones |
+    | :---: | :---: |
+    | <img src="assets/dashboard-tesoreria.png" width="400" alt="Tesorería"> | <img src="assets/dashboard-proyecciones.png" width="400" alt="Evolución y Proyecciones"> |
+    | *Control de liquidez, entradas y salidas en tiempo real* | *Previsiones presupuestarias e históricos de balance* |
 
----
+    ---
 
-#### 2. Vistas de Gestión y Modelos de Datos
+    #### 2. Vistas de Gestión y Modelos de Datos
 
-| Vista Kanban (Gestión de Obras / Proyectos) | Vista Formulario (Gestión de Partes de Trabajo) |
-| :---: | :---: |
-| <img src="assets/vista-kanban-obras.png" width="400" alt="Vista Kanban Obras"> | <img src="assets/vista-formulario-partes.png" width="400" alt="Vista Formulario Partes"> |
-| *Flujo visual de estados y seguimiento analítico por etapa* | *Lógica relacional avanzada, validaciones y restricciones de negocio* |
+    | Vista Kanban (Gestión de Obras / Proyectos) | Vista Formulario (Gestión de Partes de Trabajo) |
+    | :---: | :---: |
+    | <img src="assets/vista-kanban-obras.png" width="400" alt="Vista Kanban Obras"> | <img src="assets/vista-formulario-partes.png" width="400" alt="Vista Formulario Partes"> |
+    | *Flujo visual de estados y seguimiento analítico por etapa* | *Lógica relacional avanzada, validaciones y restricciones de negocio* |
 
-**Esquema Relacional Completo (41 tablas)**
+    **Esquema Relacional Completo (41 tablas)**
 
-```mermaid
-%%{init: {"themeVariables": {"fontSize": "14px"}} }%%
-erDiagram
+    ```mermaid
+    %%{init: {"themeVariables": {"fontSize": "14px"}} }%%
+    erDiagram
 
-  GESTION_CLIENTES {
-    varchar cliente_id PK
-    varchar nombre
-    varchar apellidos
-    varchar nombre_completo
-    varchar nif
-    varchar direccion
-    varchar cod_postal
-    varchar telf
-  }
-  GESTION_CLIENTES_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer cliente_id FK
-  }
+      GESTION_CLIENTES {
+        varchar cliente_id PK
+        varchar nombre
+        varchar apellidos
+        varchar nombre_completo
+        varchar nif
+        varchar direccion
+        varchar cod_postal
+        varchar telf
+      }
+      GESTION_CLIENTES_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer cliente_id FK
+      }
 
-  GESTION_TRABAJADORES {
-    varchar trabajador_id PK
-    varchar tipo
-    varchar nombre
-    varchar apellido
-    varchar nombre_completo
-    varchar telf
-    float coste_hora_estandar
-    float horas_totales
-    float total_euros
-  }
-  GESTION_TRABAJADORES_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer trabajador_id FK
-  }
-  GESTION_TRABAJADORES_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer trabajadores_id FK
-  }
-  GESTION_TRABAJADORES_FALTA {
-    integer trabajador_id FK
-    date fecha_inicio
-    date fecha_fin
-    varchar tipo
-    text motivo
-    integer dias
-    varchar trabajador_nombre_completo
-  }
+      GESTION_TRABAJADORES {
+        varchar trabajador_id PK
+        varchar tipo
+        varchar nombre
+        varchar apellido
+        varchar nombre_completo
+        varchar telf
+        float coste_hora_estandar
+        float horas_totales
+        float total_euros
+      }
+      GESTION_TRABAJADORES_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer trabajador_id FK
+      }
+      GESTION_TRABAJADORES_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer trabajadores_id FK
+      }
+      GESTION_TRABAJADORES_FALTA {
+        integer trabajador_id FK
+        date fecha_inicio
+        date fecha_fin
+        varchar tipo
+        text motivo
+        integer dias
+        varchar trabajador_nombre_completo
+      }
 
-  GESTION_PROVEEDORES {
-    varchar proveedor_id PK
-    varchar nombre
-    varchar direccion
-    varchar telf
-    varchar correo
-    varchar tipo
-    varchar ref
-    varchar documento
-    float base
-    float iva
-    float total
-  }
-  GESTION_PROVEEDORES_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer proveedor_id FK
-  }
-  GESTION_PROVEEDORES_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer proveedores_id FK
-  }
+      GESTION_PROVEEDORES {
+        varchar proveedor_id PK
+        varchar nombre
+        varchar direccion
+        varchar telf
+        varchar correo
+        varchar tipo
+        varchar ref
+        varchar documento
+        float base
+        float iva
+        float total
+      }
+      GESTION_PROVEEDORES_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer proveedor_id FK
+      }
+      GESTION_PROVEEDORES_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer proveedores_id FK
+      }
 
-  GESTION_ESPECIALISTAS {
-    varchar especialista_id PK
-    varchar tipo
-    varchar ref
-    varchar nombre
-    varchar telf
-    varchar correo
-    float importe
-  }
-  GESTION_ESPECIALISTAS_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer especialista_id FK
-  }
-  GESTION_ESPECIALISTAS_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer especialistas_id FK
-  }
+      GESTION_ESPECIALISTAS {
+        varchar especialista_id PK
+        varchar tipo
+        varchar ref
+        varchar nombre
+        varchar telf
+        varchar correo
+        float importe
+      }
+      GESTION_ESPECIALISTAS_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer especialista_id FK
+      }
+      GESTION_ESPECIALISTAS_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer especialistas_id FK
+      }
 
-  GESTION_OBRAS {
-    varchar obra_id PK
-    text descripcion
-    float total
-    float horas_totales_obra
-    float coste_moo_obra
-    varchar estado_pago
-    varchar salud_obra
-    integer cliente_id FK
-  }
-  GESTION_OBRAS_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer obra_id FK
-  }
-  GESTION_OBRAS_INCIDENCIAS {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer obra_id FK
-  }
-  GESTION_OBRAS_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer obra_id FK
-  }
+      GESTION_OBRAS {
+        varchar obra_id PK
+        text descripcion
+        float total
+        float horas_totales_obra
+        float coste_moo_obra
+        varchar estado_pago
+        varchar salud_obra
+        integer cliente_id FK
+      }
+      GESTION_OBRAS_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer obra_id FK
+      }
+      GESTION_OBRAS_INCIDENCIAS {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer obra_id FK
+      }
+      GESTION_OBRAS_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer obra_id FK
+      }
 
-  GESTION_PRESUPUESTOS {
-    varchar presupuesto_id PK
-    date fecha
-    integer anio
-    varchar nombre_cliente
-    varchar nif
-    varchar direccion
-    varchar telf
-    numeric base_imponible
-    float iva
-    numeric cuota_iva
-    numeric total
-    varchar estado
-    integer cliente_id FK
-    integer obra_id FK
-  }
-  GESTION_PRESUPUESTO_LINEA {
-    numeric precio
-    integer uds
-    text descripcion
-    numeric total_linea
-    integer presupuesto_id FK
-  }
-  GESTION_PRESUPUESTOS_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer presupuesto_id FK
-  }
-  GESTION_PRESUPUESTOS_INCIDENCIAS {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer presupuesto_id FK
-  }
-  GESTION_PRESUPUESTOS_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer presupuestos_id FK
-  }
+      GESTION_PRESUPUESTOS {
+        varchar presupuesto_id PK
+        date fecha
+        integer anio
+        varchar nombre_cliente
+        varchar nif
+        varchar direccion
+        varchar telf
+        numeric base_imponible
+        float iva
+        numeric cuota_iva
+        numeric total
+        varchar estado
+        integer cliente_id FK
+        integer obra_id FK
+      }
+      GESTION_PRESUPUESTO_LINEA {
+        numeric precio
+        integer uds
+        text descripcion
+        numeric total_linea
+        integer presupuesto_id FK
+      }
+      GESTION_PRESUPUESTOS_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer presupuesto_id FK
+      }
+      GESTION_PRESUPUESTOS_INCIDENCIAS {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer presupuesto_id FK
+      }
+      GESTION_PRESUPUESTOS_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer presupuestos_id FK
+      }
 
-  GESTION_GASTOS {
-    varchar gasto_id PK
-    varchar estado
-    date inicio_obra
-    date fin_obra
-    varchar mandante
-    varchar gestion_licencia
-    varchar pago_icio
-    float ingresos
-    float gastos
-    float beneficio_real
-    float coste_proveedores
-    float coste_especialistas
-    float coste_moo
-    integer obra_id FK
-    integer presupuesto_id FK
-    integer cliente_id FK
-  }
-  GESTION_GASTOS_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer gasto_id FK
-  }
+      GESTION_GASTOS {
+        varchar gasto_id PK
+        varchar estado
+        date inicio_obra
+        date fin_obra
+        varchar mandante
+        varchar gestion_licencia
+        varchar pago_icio
+        float ingresos
+        float gastos
+        float beneficio_real
+        float coste_proveedores
+        float coste_especialistas
+        float coste_moo
+        integer obra_id FK
+        integer presupuesto_id FK
+        integer cliente_id FK
+      }
+      GESTION_GASTOS_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer gasto_id FK
+      }
 
-  GESTION_INGRESOS {
-    varchar ingreso_id PK
-    varchar nombre_obra
-    varchar tipo
-    date fecha
-    integer anio
-    varchar documento
-    float importe
-    float total_ingresos
-    float debe
-    integer obra_id FK
-    integer cliente_id FK
-  }
-  GESTION_INGRESOS_OBSERVACIONES {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer ingreso_id FK
-  }
-  GESTION_INGRESOS_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer ingresos_id FK
-  }
+      GESTION_INGRESOS {
+        varchar ingreso_id PK
+        varchar nombre_obra
+        varchar tipo
+        date fecha
+        integer anio
+        varchar documento
+        float importe
+        float total_ingresos
+        float debe
+        integer obra_id FK
+        integer cliente_id FK
+      }
+      GESTION_INGRESOS_OBSERVACIONES {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer ingreso_id FK
+      }
+      GESTION_INGRESOS_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer ingresos_id FK
+      }
 
-  GESTION_PARTES_TRABAJO {
-    date fecha
-    text descripcion
-    float horas_totales
-    float coste_total_parte
-    integer obra_id FK
-  }
-  GESTION_PARTES_TRABAJO_LINEA {
-    float horas
-    float coste_hora
-    float coste_subtotal
-    integer parte_id FK
-    integer trabajador_id FK
-  }
-  GESTION_PARTES_TRABAJO_INCIDENCIAS {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer parte_id FK
-  }
+      GESTION_PARTES_TRABAJO {
+        date fecha
+        text descripcion
+        float horas_totales
+        float coste_total_parte
+        integer obra_id FK
+      }
+      GESTION_PARTES_TRABAJO_LINEA {
+        float horas
+        float coste_hora
+        float coste_subtotal
+        integer parte_id FK
+        integer trabajador_id FK
+      }
+      GESTION_PARTES_TRABAJO_INCIDENCIAS {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer parte_id FK
+      }
 
-  GESTION_PARTES_ESPECIALISTA {
-    integer obra_id FK
-    integer especialista_id FK
-    varchar especialista_nombre
-    date fecha
-    text descripcion
-    varchar documento
-    float importe
-    varchar estado_pago
-  }
-  GESTION_PARTES_ESPECIALISTA_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer parte_id FK
-  }
-  GESTION_PARTES_ESPECIALISTA_INCIDENCIAS {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer parte_id FK
-  }
+      GESTION_PARTES_ESPECIALISTA {
+        integer obra_id FK
+        integer especialista_id FK
+        varchar especialista_nombre
+        date fecha
+        text descripcion
+        varchar documento
+        float importe
+        varchar estado_pago
+      }
+      GESTION_PARTES_ESPECIALISTA_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer parte_id FK
+      }
+      GESTION_PARTES_ESPECIALISTA_INCIDENCIAS {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer parte_id FK
+      }
 
-  GESTION_PARTES_PROVEEDOR {
-    integer obra_id FK
-    integer proveedor_id FK
-    varchar proveedor_nombre
-    date fecha
-    text descripcion
-    varchar documento
-    float importe
-    varchar estado_pago
-  }
-  GESTION_PARTES_PROVEEDOR_ARCHIVO {
-    binary archivo "fichero en filestore"
-    varchar nombre_archivo
-    varchar tipo
-    integer parte_id FK
-  }
-  GESTION_PARTES_PROVEEDOR_INCIDENCIAS {
-    timestamp fecha_hora
-    integer usuario_id FK
-    text texto
-    integer parte_id FK
-  }
+      GESTION_PARTES_PROVEEDOR {
+        integer obra_id FK
+        integer proveedor_id FK
+        varchar proveedor_nombre
+        date fecha
+        text descripcion
+        varchar documento
+        float importe
+        varchar estado_pago
+      }
+      GESTION_PARTES_PROVEEDOR_ARCHIVO {
+        binary archivo "fichero en filestore"
+        varchar nombre_archivo
+        varchar tipo
+        integer parte_id FK
+      }
+      GESTION_PARTES_PROVEEDOR_INCIDENCIAS {
+        timestamp fecha_hora
+        integer usuario_id FK
+        text texto
+        integer parte_id FK
+      }
 
-  %% ── Relaciones 1:N (Many2one en la tabla hija, One2many como vista inversa) ──
-  GESTION_CLIENTES ||--o{ GESTION_CLIENTES_OBSERVACIONES : cliente_id
-  GESTION_CLIENTES ||--o{ GESTION_OBRAS : cliente_id
-  GESTION_CLIENTES ||--o{ GESTION_PRESUPUESTOS : cliente_id
-  GESTION_CLIENTES ||--o{ GESTION_INGRESOS : cliente_id
-  GESTION_CLIENTES ||--o{ GESTION_GASTOS : "cliente_id (related)"
+      %% ── Relaciones 1:N (Many2one en la tabla hija, One2many como vista inversa) ──
+      GESTION_CLIENTES ||--o{ GESTION_CLIENTES_OBSERVACIONES : cliente_id
+      GESTION_CLIENTES ||--o{ GESTION_OBRAS : cliente_id
+      GESTION_CLIENTES ||--o{ GESTION_PRESUPUESTOS : cliente_id
+      GESTION_CLIENTES ||--o{ GESTION_INGRESOS : cliente_id
+      GESTION_CLIENTES ||--o{ GESTION_GASTOS : "cliente_id (related)"
 
-  GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_OBSERVACIONES : trabajador_id
-  GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_ARCHIVO : trabajadores_id
-  GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_FALTA : trabajador_id
-  GESTION_TRABAJADORES ||--o{ GESTION_PARTES_TRABAJO_LINEA : trabajador_id
+      GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_OBSERVACIONES : trabajador_id
+      GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_ARCHIVO : trabajadores_id
+      GESTION_TRABAJADORES ||--o{ GESTION_TRABAJADORES_FALTA : trabajador_id
+      GESTION_TRABAJADORES ||--o{ GESTION_PARTES_TRABAJO_LINEA : trabajador_id
 
-  GESTION_PROVEEDORES ||--o{ GESTION_PROVEEDORES_OBSERVACIONES : proveedor_id
-  GESTION_PROVEEDORES ||--o{ GESTION_PROVEEDORES_ARCHIVO : proveedores_id
-  GESTION_PROVEEDORES ||--o{ GESTION_PARTES_PROVEEDOR : proveedor_id
+      GESTION_PROVEEDORES ||--o{ GESTION_PROVEEDORES_OBSERVACIONES : proveedor_id
+      GESTION_PROVEEDORES ||--o{ GESTION_PROVEEDORES_ARCHIVO : proveedores_id
+      GESTION_PROVEEDORES ||--o{ GESTION_PARTES_PROVEEDOR : proveedor_id
 
-  GESTION_ESPECIALISTAS ||--o{ GESTION_ESPECIALISTAS_OBSERVACIONES : especialista_id
-  GESTION_ESPECIALISTAS ||--o{ GESTION_ESPECIALISTAS_ARCHIVO : especialistas_id
-  GESTION_ESPECIALISTAS ||--o{ GESTION_PARTES_ESPECIALISTA : especialista_id
+      GESTION_ESPECIALISTAS ||--o{ GESTION_ESPECIALISTAS_OBSERVACIONES : especialista_id
+      GESTION_ESPECIALISTAS ||--o{ GESTION_ESPECIALISTAS_ARCHIVO : especialistas_id
+      GESTION_ESPECIALISTAS ||--o{ GESTION_PARTES_ESPECIALISTA : especialista_id
 
-  GESTION_OBRAS ||--o{ GESTION_OBRAS_OBSERVACIONES : obra_id
-  GESTION_OBRAS ||--o{ GESTION_OBRAS_INCIDENCIAS : obra_id
-  GESTION_OBRAS ||--o{ GESTION_OBRAS_ARCHIVO : obra_id
-  GESTION_OBRAS ||--o{ GESTION_PRESUPUESTOS : obra_id
-  GESTION_OBRAS ||--o{ GESTION_INGRESOS : obra_id
-  GESTION_OBRAS ||--o{ GESTION_PARTES_TRABAJO : obra_id
-  GESTION_OBRAS ||--o{ GESTION_PARTES_ESPECIALISTA : obra_id
-  GESTION_OBRAS ||--o{ GESTION_PARTES_PROVEEDOR : obra_id
-  GESTION_OBRAS ||--|| GESTION_GASTOS : "obra_id (1:1 unique)"
+      GESTION_OBRAS ||--o{ GESTION_OBRAS_OBSERVACIONES : obra_id
+      GESTION_OBRAS ||--o{ GESTION_OBRAS_INCIDENCIAS : obra_id
+      GESTION_OBRAS ||--o{ GESTION_OBRAS_ARCHIVO : obra_id
+      GESTION_OBRAS ||--o{ GESTION_PRESUPUESTOS : obra_id
+      GESTION_OBRAS ||--o{ GESTION_INGRESOS : obra_id
+      GESTION_OBRAS ||--o{ GESTION_PARTES_TRABAJO : obra_id
+      GESTION_OBRAS ||--o{ GESTION_PARTES_ESPECIALISTA : obra_id
+      GESTION_OBRAS ||--o{ GESTION_PARTES_PROVEEDOR : obra_id
+      GESTION_OBRAS ||--|| GESTION_GASTOS : "obra_id (1:1 unique)"
 
-  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTO_LINEA : presupuesto_id
-  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_OBSERVACIONES : presupuesto_id
-  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_INCIDENCIAS : presupuesto_id
-  GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_ARCHIVO : presupuestos_id
-  GESTION_PRESUPUESTOS ||--o{ GESTION_GASTOS : "presupuesto_id (opcional)"
+      GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTO_LINEA : presupuesto_id
+      GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_OBSERVACIONES : presupuesto_id
+      GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_INCIDENCIAS : presupuesto_id
+      GESTION_PRESUPUESTOS ||--o{ GESTION_PRESUPUESTOS_ARCHIVO : presupuestos_id
+      GESTION_PRESUPUESTOS ||--o{ GESTION_GASTOS : "presupuesto_id (opcional)"
 
-  GESTION_GASTOS ||--o{ GESTION_GASTOS_ARCHIVO : gasto_id
+      GESTION_GASTOS ||--o{ GESTION_GASTOS_ARCHIVO : gasto_id
 
-  GESTION_INGRESOS ||--o{ GESTION_INGRESOS_OBSERVACIONES : ingreso_id
-  GESTION_INGRESOS ||--o{ GESTION_INGRESOS_ARCHIVO : ingresos_id
+      GESTION_INGRESOS ||--o{ GESTION_INGRESOS_OBSERVACIONES : ingreso_id
+      GESTION_INGRESOS ||--o{ GESTION_INGRESOS_ARCHIVO : ingresos_id
 
-  GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_LINEA : parte_id
-  GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_INCIDENCIAS : parte_id
-  GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_ARCHIVO : parte_id
-  GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_INCIDENCIAS : parte_id
-  GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_ARCHIVO : parte_id
-  GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_INCIDENCIAS : parte_id
+      GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_LINEA : parte_id
+      GESTION_PARTES_TRABAJO ||--o{ GESTION_PARTES_TRABAJO_INCIDENCIAS : parte_id
+      GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_ARCHIVO : parte_id
+      GESTION_PARTES_ESPECIALISTA ||--o{ GESTION_PARTES_ESPECIALISTA_INCIDENCIAS : parte_id
+      GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_ARCHIVO : parte_id
+      GESTION_PARTES_PROVEEDOR ||--o{ GESTION_PARTES_PROVEEDOR_INCIDENCIAS : parte_id
 
-  %% ── Relaciones N:M (tabla puente) ──
-  %% Obras <-> Trabajadores/Proveedores/Especialistas: UNA sola tabla puente por
-  %% pareja, compartida por el campo calculado de la obra y el obra_ids del recurso.
-  GESTION_OBRAS }o--o{ GESTION_TRABAJADORES : "trabajador_ids calculado = obra_ids (solo lectura)"
-  GESTION_OBRAS }o--o{ GESTION_PROVEEDORES : "proveedor_ids calculado = obra_ids (solo lectura)"
-  GESTION_OBRAS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids calculado = obra_ids (solo lectura)"
-  GESTION_TRABAJADORES }o--o{ GESTION_PARTES_TRABAJO : "parte_trabajo_ids (calculado)"
-  %% Presupuestos <-> Proveedores/Especialistas: una tabla puente por pareja, vista desde los dos lados.
-  GESTION_PRESUPUESTOS }o--o{ GESTION_PROVEEDORES : "proveedor_ids = presupuesto_ids"
-  GESTION_PRESUPUESTOS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids = presupuesto_ids"
-```
+      %% ── Relaciones N:M (tabla puente) ──
+      %% Obras <-> Trabajadores/Proveedores/Especialistas: UNA sola tabla puente por
+      %% pareja, compartida por el campo calculado de la obra y el obra_ids del recurso.
+      GESTION_OBRAS }o--o{ GESTION_TRABAJADORES : "trabajador_ids calculado = obra_ids (solo lectura)"
+      GESTION_OBRAS }o--o{ GESTION_PROVEEDORES : "proveedor_ids calculado = obra_ids (solo lectura)"
+      GESTION_OBRAS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids calculado = obra_ids (solo lectura)"
+      GESTION_TRABAJADORES }o--o{ GESTION_PARTES_TRABAJO : "parte_trabajo_ids (calculado)"
+      %% Presupuestos <-> Proveedores/Especialistas: una tabla puente por pareja, vista desde los dos lados.
+      GESTION_PRESUPUESTOS }o--o{ GESTION_PROVEEDORES : "proveedor_ids = presupuesto_ids"
+      GESTION_PRESUPUESTOS }o--o{ GESTION_ESPECIALISTAS : "especialista_ids = presupuesto_ids"
+    ```
 
-*Diagrama entidad-relación completo generado a partir de los modelos Odoo — clic para ampliar.*
+    *Diagrama entidad-relación completo generado a partir de los modelos Odoo — clic para ampliar.*
 
----
+    ---
 
-#### 3. Documentos y Reportes Impresos (PDF/QWeb)
+    #### 3. Documentos y Reportes Impresos (PDF/QWeb)
 
-| Presupuesto de Obra | Informe de Estado de Obra | Parte de Trabajo Diario |
-| :---: | :---: | :---: |
-| <img src="assets/reporte-presupuesto.png" width="260" alt="Reporte Presupuesto"> | <img src="assets/reporte-informe-obra.png" width="260" alt="Reporte Informe Obra"> | <img src="assets/reporte-parte-trabajo.png" width="260" alt="Reporte Parte Trabajo"> |
-| *Presupuesto detallado para cliente con impuestos e imprevistos* | *Resumen ejecutivo de costes, avance y desviaciones* | *Control diario de mano de obra y materiales consumidos* |
+    | Presupuesto de Obra | Informe de Estado de Obra | Parte de Trabajo Diario |
+    | :---: | :---: | :---: |
+    | <img src="assets/reporte-presupuesto.png" width="260" alt="Reporte Presupuesto"> | <img src="assets/reporte-informe-obra.png" width="260" alt="Reporte Informe Obra"> | <img src="assets/reporte-parte-trabajo.png" width="260" alt="Reporte Parte Trabajo"> |
+    | *Presupuesto detallado para cliente con impuestos e imprevistos* | *Resumen ejecutivo de costes, avance y desviaciones* | *Control diario de mano de obra y materiales consumidos* |
 
-</details>
+    </details>
 
 ---
 
 ### Portfolio y Proyectos Destacados
+
+*   **luzPreddict - Previsión del Precio de la Luz (PVPC) con Machine Learning (Python, FastAPI & React)**
+    Web y API públicas que prevén, hora a hora, el precio de la luz del mercado regulado español (PVPC) del día siguiente con un modelo de machine learning, y ayudan a decidir cuándo consumir para pagar menos. Recorre el ciclo completo de un producto de datos — ingesta, modelo, base de datos, API, web, automatización y despliegue — y funciona en producción sin coste.
+    *   **Datos e ingesta:** PVPC horario y mix de generación de la API pública de Red Eléctrica desde junio de 2021 (unas 47.000 horas), con descarga incremental e idempotente y los días de 23 y 25 horas de los cambios de hora resueltos trabajando en UTC.
+    *   **Modelo:** LightGBM con 17 variables de calendario y de precios anteriores, evaluado día a día (*walk-forward*) con periodos de validación y de prueba separados: se equivoca un 30 % menos que la mejor referencia simple. Da además un rango probable por hora con regresión por cuantiles, calibrado para que el precio real caiga dentro 8 de cada 10 horas, y publica una referencia de respaldo si el modelo no se puede usar.
+    *   **API pública:** FastAPI de solo lectura y sin clave, documentada con OpenAPI, con errores uniformes, caché en la CDN hasta la siguiente actualización de los datos y límite de 60 peticiones por minuto e IP con Upstash Redis.
+    *   **Web:** React 19 y TypeScript con nueve secciones (panel, histórico, mercado, simulador de ahorro por aparato, planificador según la potencia contratada, comparador PVPC frente a precio fijo, alertas, evaluación del modelo y documentación de la API), gráficas SVG propias con tablas accesibles y accesibilidad 100 en Lighthouse.
+    *   **Automatización:** GitHub Actions para la tarea diaria (ingesta, previsión y error frente al precio real), el reentrenamiento semanal, las migraciones de PostgreSQL con Alembic y una auditoría Lighthouse tras cada despliegue, con avisos internos al móvil por ntfy y Dependabot semanal.
+    *   **Calidad:** 608 tests de Python contra un PostgreSQL real (incluido que el modelo nunca vea el día que predice) y 214 de la web con Vitest y cobertura mínima obligatoria; CI con ruff, oxlint y TypeScript en cada push.
+    *   **Arquitectura y despliegue:** el cálculo pesado en GitHub Actions y el servicio en Vercel (web y API en Frankfurt), con PostgreSQL en Neon, todo en planes gratuitos (0 € al mes). Docker Compose para levantarlo en local y una [guía técnica](https://pdawgabriel-hub.github.io/luzPreddict/) publicada con MkDocs.
+    *   **Despliegue Activo:** [Ver despliegue en Vercel](https://luzpreddict.vercel.app) | [Ver documentación de la API](https://luzpreddict.vercel.app/docs) | [Ver repositorio de código](https://github.com/pdawgabriel-hub/luzPreddict)
+
+    <details>
+    <summary><b>Haz clic aquí para ver la arquitectura y las capturas de la web</b></summary>
+
+    <br>
+
+    <img src="assets/luzpreddict-arquitectura.svg" alt="Arquitectura de luzPreddict: GitHub Actions descarga de REE los precios y el mix, prevé y guarda en PostgreSQL (Neon); Vercel sirve la API y la web desde su CDN">
+
+    | Panel | Simulador | Modelo |
+    | :---: | :---: | :---: |
+    | <img src="assets/luzpreddict-panel.png" width="260" alt="Panel de luzPreddict"> | <img src="assets/luzpreddict-simulador.png" width="260" alt="Simulador de ahorro"> | <img src="assets/luzpreddict-modelo.png" width="260" alt="Evaluación del modelo"> |
+    | *Precio de ahora, de hoy y previsión de mañana* | *Coste y ahorro moviendo un aparato de hora* | *Previsión frente a precio real y frente a las referencias* |
+
+    </details>
 
 *   **ERP Construcción - Dashboard Financiero (React & TypeScript)**
     Ecosistema frontend modular e inteligente para el análisis contable y control presupuestario de obras en tiempo real, adaptando a una versión 100% frontend (sin backend ni base de datos física, persistencia en `localStorage` versionado) el modelo de negocio de 13 entidades del ERP a medida hecho sobre Odoo.
@@ -461,10 +486,6 @@ erDiagram
 
 *   **Migración del ERP de Construcción a SAP ABAP / HANA** *(planificación)*
     Llevar el ERP de gestión de obras (hoy en Odoo 18) a SAP S/4HANA, reimplementando el mismo modelo de datos y la misma lógica de negocio — presupuestos, obras, partes de trabajo/especialista/proveedor y seguimiento financiero — en ABAP sobre HANA, apoyándose en la documentación técnica ya generada del proyecto original (esquema relacional, modelos y métodos) como base de la migración.
-
-*   **LuzPredict - Predicción del Precio de la Luz (PVPC) con Python** *(idea en fase de planificación, aún sin repositorio)*
-    Proyecto pensado para predecir el precio horario de la electricidad en España a partir de datos públicos reales de la API de ESIOS/REE, con un recomendador de las horas más económicas del día siguiente para el consumo doméstico.
-    *   **Enfoque técnico previsto:** Ingesta desde una API pública real (no dataset estático), *feature engineering* temporal (lags, festivos, estacionalidad), modelos de forecasting (LightGBM / Prophet) con validación temporal correcta, y despliegue en Streamlit Community Cloud.
 
 ---
 
@@ -491,8 +512,12 @@ erDiagram
 ![Odoo](https://img.shields.io/badge/-Odoo-714B67?style=flat&logo=odoo&logoColor=white)
 ![OWL Framework](https://img.shields.io/badge/-OWL_Framework-007ACC?style=flat&logo=javascript&logoColor=white)
 ![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?style=flat&logo=laravel&logoColor=white)
+![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 
-**Ciencia de Datos & Analítica (R)**
+**Ciencia de Datos, Machine Learning & Analítica**
+![pandas](https://img.shields.io/badge/-pandas-150458?style=flat&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/-scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white)
+![LightGBM](https://img.shields.io/badge/-LightGBM-9ACD32?style=flat)
 ![Shiny](https://img.shields.io/badge/-Shiny-blue?style=flat&logo=rstudio&logoColor=white)
 ![Plotly](https://img.shields.io/badge/-Plotly-3F4F75?style=flat&logo=plotly&logoColor=white)
 ![Leaflet](https://img.shields.io/badge/-Leaflet-199900?style=flat&logo=leaflet&logoColor=white)
@@ -504,6 +529,7 @@ erDiagram
 ![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat&logo=linux&logoColor=black)
 ![Sanity](https://img.shields.io/badge/-Sanity-F03E2F?style=flat&logo=sanity&logoColor=white)
 ![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat&logo=vercel&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/-GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
 
 ---
 

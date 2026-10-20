@@ -96,9 +96,9 @@ Un sistema integral diseñado para automatizar la carga administrativa y mitigar
 
 **Esquema Relacional Completo (41 tablas)**
 
-<a href="assets/esquema-relacional.png"><img src="assets/esquema-relacional.png" width="100%" alt="Esquema relacional completo del ERP: 41 tablas con sus campos y relaciones"></a>
+<a href="https://raw.githubusercontent.com/pdawgabriel-hub/pdawgabriel-hub/main/assets/esquema-relacional.png"><img src="assets/esquema-relacional.png" width="100%" alt="Esquema relacional completo del ERP: 41 tablas con sus campos y relaciones"></a>
 
-*Diagrama entidad-relación completo generado a partir de los modelos Odoo. Haz clic en la imagen para abrirla a tamaño completo.*
+*Diagrama entidad-relación completo generado a partir de los modelos Odoo. Haz clic en la imagen para abrirla a tamaño completo y ampliarla.*
 
 ---
 
@@ -207,7 +207,7 @@ Web y API públicas que prevén, hora a hora, el precio de la luz del mercado re
 *   **Web:** React 19 y TypeScript con nueve secciones (panel, histórico, mercado, simulador de ahorro por aparato, planificador según la potencia contratada, comparador PVPC frente a precio fijo, alertas, evaluación del modelo y documentación de la API), gráficas SVG propias con tablas accesibles y accesibilidad 100 en Lighthouse.
 *   **Automatización:** GitHub Actions para la tarea diaria (ingesta, previsión y error frente al precio real), el reentrenamiento semanal, las migraciones de PostgreSQL con Alembic y una auditoría Lighthouse tras cada despliegue, con avisos internos al móvil por ntfy y Dependabot semanal.
 *   **Calidad:** 608 tests de Python contra un PostgreSQL real (incluido que el modelo nunca vea el día que predice) y 214 de la web con Vitest y cobertura mínima obligatoria; CI con ruff, oxlint y TypeScript en cada push.
-*   **Arquitectura y despliegue:** el cálculo pesado en GitHub Actions y el servicio en Vercel (web y API en Frankfurt), con PostgreSQL en Neon, todo en planes gratuitos. Docker Compose para levantarlo en local y una [guía técnica](https://pdawgabriel-hub.github.io/luzPreddict/) publicada con MkDocs.
+*   **Arquitectura y despliegue:** el cálculo pesado en GitHub Actions y el servicio (web y API) en Vercel, con PostgreSQL en Neon, todo en planes gratuitos. Docker Compose para levantarlo en local y una [guía técnica](https://pdawgabriel-hub.github.io/luzPreddict/) publicada con MkDocs.
 
 </details>
 

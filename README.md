@@ -21,8 +21,10 @@
 
 <table align="center">
   <tr>
-    <td>
-      <img src="assets/vista-kanban-obras.png" align="left" width="380" hspace="8" alt="Vista Kanban de las obras en el ERP">
+    <td width="48%" valign="middle">
+      <img src="assets/tarjeta-erp.png" width="100%" alt="Vista Kanban de las obras en el ERP">
+    </td>
+    <td valign="top">
       <h3>ERP a Medida para Construcción y Reformas</h3>
       <img src="https://img.shields.io/badge/En_producción-2EA44F?style=flat-square" alt="En producción">
       <p>ERP para una empresa real de construcción y reformas que controla cada obra de principio a fin, del presupuesto al beneficio real, con un panel de análisis financiero de toda la cartera de obras.</p>
@@ -38,7 +40,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td colspan="2">
       <picture>
         <source media="(max-width: 767px)" srcset="https://raw.githubusercontent.com/pdawgabriel-hub/pdawgabriel-hub/main/assets/erp-flujo-movil.svg">
         <img src="assets/erp-flujo.svg" width="100%" alt="Flujo del ERP: cliente y presupuesto, obra y sus recursos, partes de trabajo, especialista y proveedor, gastos, ingresos, beneficio real y dashboard financiero">
@@ -110,11 +112,14 @@ Un sistema integral diseñado para automatizar la carga administrativa y mitigar
 
 <table align="center">
   <tr>
-    <td>
-      <a href="https://rock-and-roll-pizza.vercel.app/"><img src="assets/rock-and-roll-pizza.jpg" align="left" width="380" hspace="8" alt="Portada de la web de Rock & Roll Pizza"></a>
+    <td width="48%" valign="middle">
+      <a href="https://rock-and-roll-pizza.vercel.app/"><img src="assets/tarjeta-pizza.png" width="100%" alt="Portada de la web de Rock & Roll Pizza"></a>
+    </td>
+    <td valign="top">
       <h3>Rock & Roll Pizza</h3>
       <img src="https://img.shields.io/badge/En_desarrollo-D29922?style=flat-square" alt="En desarrollo">
       <p>Web para una pizzería que sustituye su WordPress inicial: el cliente edita la oferta de la semana y los datos del negocio desde su propio panel, sin tocar código.</p>
+      <p><sub><b>Panel propio en Sanity Studio · la web se reconstruye sola al publicar</b></sub></p>
       <p>
         <img src="https://img.shields.io/badge/Astro-BC52EE?style=flat-square&logo=astro&logoColor=white" alt="Astro">
         <img src="https://img.shields.io/badge/Sanity-F03E2F?style=flat-square&logo=sanity&logoColor=white" alt="Sanity">
@@ -159,8 +164,10 @@ rock-and-roll-pizza/
 
 <table align="center">
   <tr>
-    <td>
-      <a href="https://luzpreddict.vercel.app"><img src="assets/luzpreddict-panel.png" align="left" width="380" hspace="8" alt="Panel de luzPreddict"></a>
+    <td width="48%" valign="middle">
+      <a href="https://luzpreddict.vercel.app"><img src="assets/tarjeta-luzpreddict.png" width="100%" alt="Panel de luzPreddict"></a>
+    </td>
+    <td valign="top">
       <h3>luzPreddict</h3>
       <img src="https://img.shields.io/badge/En_producción-2EA44F?style=flat-square" alt="En producción">
       <p>Previsión hora a hora del precio de la luz (PVPC) del día siguiente con machine learning, con web y API públicas que ayudan a decidir cuándo consumir para pagar menos.</p>
@@ -178,7 +185,7 @@ rock-and-roll-pizza/
     </td>
   </tr>
   <tr>
-    <td>
+    <td colspan="2">
       <picture>
         <source media="(max-width: 767px)" srcset="https://raw.githubusercontent.com/pdawgabriel-hub/pdawgabriel-hub/main/assets/luzpreddict-flujo-movil.svg">
         <img src="assets/luzpreddict-flujo.svg" width="100%" alt="Flujo de luzPreddict: GitHub Actions descarga de REE, prevé y guarda en PostgreSQL; Vercel sirve la API y la web">
@@ -221,8 +228,10 @@ Web y API públicas que prevén, hora a hora, el precio de la luz del mercado re
 
 <table align="center">
   <tr>
-    <td>
-      <a href="https://pdawgabriel-hub.shinyapps.io/geoalquiler/"><img src="https://raw.githubusercontent.com/pdawgabriel-hub/geo-alquiler/main/man/figures/observatorio-alquiler.png" align="left" width="380" hspace="8" alt="Observatorio del Alquiler de GeoAlquiler"></a>
+    <td width="48%" valign="middle">
+      <a href="https://pdawgabriel-hub.shinyapps.io/geoalquiler/"><img src="assets/tarjeta-geoalquiler.png" width="100%" alt="Observatorio del Alquiler de GeoAlquiler"></a>
+    </td>
+    <td valign="top">
       <h3>GeoAlquiler</h3>
       <p>Observatorio del alquiler de los ~8.200 municipios de España con datos oficiales, junto a un análisis de mercado con machine learning y herramientas para inversores.</p>
       <p><sub><b>15 módulos Shiny · 29 tests · mapa nacional en ~1,2 s</b></sub></p>
@@ -237,7 +246,7 @@ Web y API públicas que prevén, hora a hora, el precio de la luz del mercado re
     </td>
   </tr>
   <tr>
-    <td>
+    <td colspan="2">
       <picture>
         <source media="(max-width: 767px)" srcset="https://raw.githubusercontent.com/pdawgabriel-hub/pdawgabriel-hub/main/assets/geoalquiler-flujo-movil.svg">
         <img src="assets/geoalquiler-flujo.svg" width="100%" alt="Flujo de GeoAlquiler: ingesta offline, app Shiny y navegador">
@@ -267,10 +276,13 @@ Aplicación web analítica construida como paquete de R (framework `{golem}`) co
 
 <table align="center">
   <tr>
-    <td>
-      <a href="https://dashboard-financiero-kappa-blue.vercel.app/"><img src="https://raw.githubusercontent.com/pdawgabriel-hub/dashboard-financiero/main/docs/screenshots/dashboard.png" align="left" width="380" hspace="8" alt="Dashboard financiero en React"></a>
+    <td width="48%" valign="middle">
+      <a href="https://dashboard-financiero-kappa-blue.vercel.app/"><img src="assets/tarjeta-dashboard.png" width="100%" alt="Dashboard financiero en React"></a>
+    </td>
+    <td valign="top">
       <h3>ERP Construcción - Dashboard Financiero</h3>
       <p>Versión 100% frontend del ERP de construcción: 13 entidades, dashboard financiero, formularios validados y exportación a PDF.</p>
+      <p><sub><b>13 entidades · sin backend, todo en el navegador · PDF</b></sub></p>
       <p>
         <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React">
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
@@ -282,7 +294,7 @@ Aplicación web analítica construida como paquete de R (framework `{golem}`) co
     </td>
   </tr>
   <tr>
-    <td>
+    <td colspan="2">
       <picture>
         <source media="(max-width: 767px)" srcset="https://raw.githubusercontent.com/pdawgabriel-hub/pdawgabriel-hub/main/assets/dashboard-flujo-movil.svg">
         <img src="assets/dashboard-flujo.svg" width="100%" alt="Flujo del Dashboard Financiero: datos en localStorage, servicios, interfaz React y despliegue en Vercel">

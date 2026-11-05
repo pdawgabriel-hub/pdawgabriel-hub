@@ -319,31 +319,102 @@ Ecosistema frontend modular e inteligente para el análisis contable y control p
 
 ---
 
-## Próximamente
+## Actualmente en desarrollo
 
-**Migración del ERP de Construcción a SAP ABAP / HANA** · *en planificación*
+### playa·hoy
+
+Recomendador de playas de la Región de Murcia: cruza la previsión de viento y oleaje con la orientación de cada playa, le pone una nota según tu plan y explica por qué.
+
+`TypeScript` · `Astro` · `React` · `Hono` · `PostGIS` · [Código](https://github.com/pdawgabriel-hub/playa-hoy)
+
+<table align="center">
+  <tr>
+    <th width="50%" align="left">Ya funciona</th>
+    <th width="50%" align="left">Lo siguiente</th>
+  </tr>
+  <tr>
+    <td valign="top"><ul><li>Ingesta programada de datos meteorológicos y del catálogo de playas</li><li>Motor de puntuación con 4 planes</li><li>API pública con OpenAPI</li><li>Web: página principal con el ranking</li></ul></td>
+    <td valign="top"><ul><li>Resto de pantallas: fichas, mapa, semana y comparador</li><li>Estadísticas históricas</li><li>Publicar la web</li></ul></td>
+  </tr>
+</table>
 
 <details>
-<summary><b>Ver en qué consiste</b></summary>
+<summary><b>Ver detalles técnicos</b></summary>
 
 <br>
 
-Llevar el ERP de gestión de obras (hoy en Odoo 18) a SAP S/4HANA, reimplementando el mismo modelo de datos y la misma lógica de negocio — presupuestos, obras, partes de trabajo/especialista/proveedor y seguimiento financiero — en ABAP sobre HANA, apoyándose en la documentación técnica ya generada del proyecto original (esquema relacional, modelos y métodos) como base de la migración.
+La misma previsión afecta de forma muy distinta a cada playa según hacia dónde mira y qué la protege. playa·hoy estima lo que de verdad llega a la orilla y responde a qué playa ir hoy y a qué hora, para cuatro planes: familia con niños, snorkel, tomar el sol y surf.
+
+*   **Motor de puntuación:** paquete `core` de funciones puras, sin acceso a red ni a base de datos, compartido por la API y los jobs. Calcula la nota de 0 a 100 con sus razones, la mejor franja de tres horas y la bandera probable.
+*   **Datos e ingesta:** scripts en TypeScript programados con GitHub Actions, incrementales e idempotentes, que combinan Open-Meteo, AEMET, el censo de aguas de baño, Turismo de la Región de Murcia y OpenStreetMap. PostgreSQL con PostGIS y Drizzle.
+*   **API:** Hono con Zod y OpenAPI, documentada con Scalar.
+*   **Calidad:** monorepo con pnpm, 644 tests con Vitest, APIs externas simuladas con MSW, PostgreSQL real en Docker y CI en cada push.
 
 </details>
+
+### GeoAlquiler: API REST y nueva interfaz
+
+Nueva funcionalidad para GeoAlquiler: exponer sus datos y análisis con una API REST, de modo que otra interfaz en un lenguaje distinto pueda usarlos, y mejorar de paso la aplicación.
+
+`R` · `plumber2` · `API REST` · [Código](https://github.com/pdawgabriel-hub/geo-alquiler) · [App actual](https://pdawgabriel-hub.shinyapps.io/geoalquiler/)
+
+<table align="center">
+  <tr>
+    <th width="50%" align="left">Ya funciona</th>
+    <th width="50%" align="left">Lo siguiente</th>
+  </tr>
+  <tr>
+    <td valign="top"><ul><li>App en Shiny publicada, con el Observatorio del Alquiler y los análisis de mercado</li><li>Lógica de negocio separada en funciones puras, sin dependencias de Shiny</li></ul></td>
+    <td valign="top"><ul><li>API REST con plumber2</li><li>Nueva interfaz en otro lenguaje que consuma la API</li><li>Mejoras en la aplicación</li></ul></td>
+  </tr>
+</table>
+
+### Migración del ERP a Laravel
+
+Reconstruyo paso a paso con Laravel el ERP de construcción que tengo en producción con Odoo, usando su informe técnico como especificación. Es un proyecto de aprendizaje de backend, en mi cuenta de estudiante.
+
+`Laravel 13` · `PHP` · `Blade` · `GitHub Actions` · [Código](https://github.com/iborra0306/gestion-obras-laravel) · [Guía](https://pdawgabriel-hub.github.io/curso-laravel/)
+
+<table align="center">
+  <tr>
+    <th width="50%" align="left">Ya funciona</th>
+    <th width="50%" align="left">Lo siguiente</th>
+  </tr>
+  <tr>
+    <td valign="top"><ul><li>Rutas y vistas Blade con layout común</li><li>Controladores de clientes, obras y trabajadores</li><li>Formularios con validación mediante Form Requests</li><li>Tests por apartado y CI</li></ul></td>
+    <td valign="top"><ul><li>Control de usuarios</li><li>Sustituir los datos de prueba por MariaDB y Eloquent</li><li>Relaciones y cálculos financieros</li><li>API REST con Sanctum y OpenAPI</li></ul></td>
+  </tr>
+</table>
+
+### Migración del ERP a SAP ABAP
+
+Llevo el mismo ERP a SAP ABAP Cloud, reimplementando su modelo de datos y su lógica de negocio a partir de la documentación técnica del proyecto original.
+
+`ABAP Cloud` · `SAP BTP` · `abapGit` · [Código](https://github.com/pdawgabriel-hub/erp-obras-reformas-sap)
+
+<table align="center">
+  <tr>
+    <th width="50%" align="left">Ya funciona</th>
+    <th width="50%" align="left">Lo siguiente</th>
+  </tr>
+  <tr>
+    <td valign="top"><ul><li>Tipos y estructuras de las entidades</li><li>7 reglas de negocio: redondeo, IVA, totales, costes y días de falta</li><li>Pruebas con ABAP Unit</li></ul></td>
+    <td valign="top"><ul><li>Tablas y vistas CDS</li><li>Servicio RAP: determinations, validations y actions</li><li>OData V4 e interfaz con Fiori Elements</li></ul></td>
+  </tr>
+</table>
 
 ---
 
 ## Tecnologías y Herramientas
 
 **Lenguajes**<br>
-<img src="assets/tech/python.svg" width="72" alt="Python"> <img src="assets/tech/java.svg" width="72" alt="Java"> <img src="assets/tech/php.svg" width="72" alt="PHP"> <img src="assets/tech/javascript.svg" width="72" alt="JavaScript"> <img src="assets/tech/typescript.svg" width="72" alt="TypeScript"> <img src="assets/tech/r.svg" width="72" alt="R">
+<img src="assets/tech/python.svg" width="72" alt="Python"> <img src="assets/tech/java.svg" width="72" alt="Java"> <img src="assets/tech/php.svg" width="72" alt="PHP"> <img src="assets/tech/javascript.svg" width="72" alt="JavaScript"> <img src="assets/tech/typescript.svg" width="72" alt="TypeScript"> <img src="assets/tech/r.svg" width="72" alt="R"> <img src="assets/tech/abap.svg" width="72" alt="ABAP">
 
 **Frontend & UI**<br>
 <img src="assets/tech/react.svg" width="72" alt="React"> <img src="assets/tech/astro.svg" width="72" alt="Astro"> <img src="assets/tech/tailwind-css.svg" width="72" alt="Tailwind CSS"> <img src="assets/tech/sass.svg" width="72" alt="Sass"> <img src="assets/tech/bootstrap.svg" width="72" alt="Bootstrap"> <img src="assets/tech/vite.svg" width="72" alt="Vite"> <img src="assets/tech/zod.svg" width="72" alt="Zod">
 
 **Backend, ERP & Frameworks**<br>
-<img src="assets/tech/odoo.svg" width="72" alt="Odoo"> <img src="assets/tech/owl.svg" width="72" alt="OWL"> <img src="assets/tech/laravel.svg" width="72" alt="Laravel"> <img src="assets/tech/fastapi.svg" width="72" alt="FastAPI">
+<img src="assets/tech/odoo.svg" width="72" alt="Odoo"> <img src="assets/tech/owl.svg" width="72" alt="OWL"> <img src="assets/tech/laravel.svg" width="72" alt="Laravel"> <img src="assets/tech/fastapi.svg" width="72" alt="FastAPI"> <img src="assets/tech/hono.svg" width="72" alt="Hono">
 
 **Ciencia de Datos & Machine Learning**<br>
 <img src="assets/tech/pandas.svg" width="72" alt="pandas"> <img src="assets/tech/scikit-learn.svg" width="72" alt="scikit-learn"> <img src="assets/tech/lightgbm.svg" width="72" alt="LightGBM"> <img src="assets/tech/shiny.svg" width="72" alt="Shiny"> <img src="assets/tech/plotly.svg" width="72" alt="Plotly"> <img src="assets/tech/leaflet.svg" width="72" alt="Leaflet">

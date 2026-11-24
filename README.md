@@ -182,6 +182,7 @@ rock-and-roll-pizza/
       <a href="https://luzpreddict.vercel.app"><img src="https://img.shields.io/badge/Ver_demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Ver demo"></a>
       <a href="https://luzpreddict.vercel.app/docs"><img src="https://img.shields.io/badge/API-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="Documentación de la API"></a>
       <a href="https://github.com/pdawgabriel-hub/luzPreddict"><img src="https://img.shields.io/badge/Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositorio"></a>
+      <a href="https://pdawgabriel-hub.github.io/luzPreddict/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guía técnica"></a>
     </td>
   </tr>
   <tr>
@@ -243,6 +244,7 @@ Web y API públicas que prevén, hora a hora, el precio de la luz del mercado re
       </p>
       <a href="https://pdawgabriel-hub.shinyapps.io/geoalquiler/"><img src="https://img.shields.io/badge/Ver_demo-75AADB?style=for-the-badge&logo=rstudioide&logoColor=white" alt="Ver demo"></a>
       <a href="https://github.com/pdawgabriel-hub/geo-alquiler"><img src="https://img.shields.io/badge/Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositorio"></a>
+      <a href="https://pdawgabriel-hub.github.io/geo-alquiler/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guía técnica"></a>
     </td>
   </tr>
   <tr>
@@ -291,6 +293,7 @@ Aplicación web analítica construida como paquete de R (framework `{golem}`) co
       </p>
       <a href="https://dashboard-financiero-kappa-blue.vercel.app/"><img src="https://img.shields.io/badge/Ver_demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Ver demo"></a>
       <a href="https://github.com/pdawgabriel-hub/dashboard-financiero"><img src="https://img.shields.io/badge/Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositorio"></a>
+      <a href="https://pdawgabriel-hub.github.io/dashboard-financiero/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guía técnica"></a>
     </td>
   </tr>
   <tr>
@@ -369,23 +372,6 @@ Nueva funcionalidad para GeoAlquiler: exponer sus datos y análisis con una API 
   </tr>
 </table>
 
-### Migración del ERP a Laravel
-
-Reconstruyo paso a paso con Laravel el ERP de construcción que tengo en producción con Odoo, usando su informe técnico como especificación. Es un proyecto de aprendizaje de backend, en mi cuenta de estudiante.
-
-`Laravel 13` · `PHP` · `Blade` · `GitHub Actions` · [Código](https://github.com/iborra0306/gestion-obras-laravel) · [Guía](https://pdawgabriel-hub.github.io/curso-laravel/)
-
-<table align="center">
-  <tr>
-    <th width="50%" align="left">Ya funciona</th>
-    <th width="50%" align="left">Lo siguiente</th>
-  </tr>
-  <tr>
-    <td valign="top"><ul><li>Rutas y vistas Blade con layout común</li><li>Controladores de clientes, obras y trabajadores</li><li>Formularios con validación mediante Form Requests</li><li>Tests por apartado y CI</li></ul></td>
-    <td valign="top"><ul><li>Control de usuarios</li><li>Sustituir los datos de prueba por MariaDB y Eloquent</li><li>Relaciones y cálculos financieros</li><li>API REST con Sanctum y OpenAPI</li></ul></td>
-  </tr>
-</table>
-
 ### Migración del ERP a SAP ABAP
 
 Llevo el mismo ERP a SAP ABAP Cloud, reimplementando su modelo de datos y su lógica de negocio a partir de la documentación técnica del proyecto original.
@@ -402,6 +388,16 @@ Llevo el mismo ERP a SAP ABAP Cloud, reimplementando su modelo de datos y su ló
     <td valign="top"><ul><li>Tablas y vistas CDS</li><li>Servicio RAP: determinations, validations y actions</li><li>OData V4 e interfaz con Fiori Elements</li></ul></td>
   </tr>
 </table>
+
+---
+
+## Proyecto de aprendizaje
+
+### Migración del ERP a Laravel
+
+Proyecto para aprender Laravel en el que realizo la migración de mi ERP de Odoo a Laravel.
+
+`Laravel` · `PHP` · `Blade` · [Código](https://github.com/iborra0306/gestion-obras-laravel)
 
 ---
 

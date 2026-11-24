@@ -182,7 +182,7 @@ rock-and-roll-pizza/
       <a href="https://luzpreddict.vercel.app"><img src="https://img.shields.io/badge/Ver_demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Ver demo"></a>
       <a href="https://luzpreddict.vercel.app/docs"><img src="https://img.shields.io/badge/API-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="Documentación de la API"></a>
       <a href="https://github.com/pdawgabriel-hub/luzPreddict"><img src="https://img.shields.io/badge/Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositorio"></a>
-      <a href="https://pdawgabriel-hub.github.io/luzPreddict/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guía técnica"></a>
+      <a href="https://pdawgabriel-hub.github.io/luzPreddict/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge" alt="Guía técnica"></a>
     </td>
   </tr>
   <tr>
@@ -244,7 +244,7 @@ Web y API públicas que prevén, hora a hora, el precio de la luz del mercado re
       </p>
       <a href="https://pdawgabriel-hub.shinyapps.io/geoalquiler/"><img src="https://img.shields.io/badge/Ver_demo-75AADB?style=for-the-badge&logo=rstudioide&logoColor=white" alt="Ver demo"></a>
       <a href="https://github.com/pdawgabriel-hub/geo-alquiler"><img src="https://img.shields.io/badge/Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositorio"></a>
-      <a href="https://pdawgabriel-hub.github.io/geo-alquiler/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guía técnica"></a>
+      <a href="https://pdawgabriel-hub.github.io/geo-alquiler/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge" alt="Guía técnica"></a>
     </td>
   </tr>
   <tr>
@@ -293,7 +293,7 @@ Aplicación web analítica construida como paquete de R (framework `{golem}`) co
       </p>
       <a href="https://dashboard-financiero-kappa-blue.vercel.app/"><img src="https://img.shields.io/badge/Ver_demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Ver demo"></a>
       <a href="https://github.com/pdawgabriel-hub/dashboard-financiero"><img src="https://img.shields.io/badge/Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositorio"></a>
-      <a href="https://pdawgabriel-hub.github.io/dashboard-financiero/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Guía técnica"></a>
+      <a href="https://pdawgabriel-hub.github.io/dashboard-financiero/"><img src="https://img.shields.io/badge/Guía-0969DA?style=for-the-badge" alt="Guía técnica"></a>
     </td>
   </tr>
   <tr>
